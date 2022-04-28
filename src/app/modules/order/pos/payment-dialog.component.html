@@ -1,0 +1,107 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Phương thức thanh toán</h1>
+<mat-error *ngIf="error">
+    <span>{{error}}</span>
+</mat-error>
+<div  style="margin-top: 10px;">
+    <mat-form-field style="width: 100%;">
+        <mat-select placeholder="Chọn phương thức thanh toán" [(ngModel)]="data.payment_method" (ngModelChange)="changeMethod()">
+<!--            <mat-option value="ROOM">Thanh toán cùng tiền phòng</mat-option>-->
+            <mat-option *ngIf="edit" value="CASH">Tiền mặt</mat-option>
+            <mat-option value="DEBT">Khách nợ</mat-option>
+            <mat-option value="CREDIT_CARD">Thanh toán thẻ</mat-option>
+            <mat-option value="FREE">Miễn phí</mat-option>
+            <mat-option value="OTHER">Khác</mat-option>
+        </mat-select>
+    </mat-form-field>
+<!--    <div style="width: 100%;" *ngIf="showGroup">-->
+<!--        <mat-checkbox [(ngModel)]="data.payment_group" >Group payment</mat-checkbox>-->
+<!--    </div>-->
+    <div *ngIf="data.payment_method == 'DEBT'">
+        <mat-label>Khách hàng</mat-label>
+        <mat-select placeholder="Khách hàng" [compareWith]="compareObjects" [(ngModel)]="customer_name" >
+            <ngx-mat-select-search placeholderLabel="Tìm khách hàng" (input)="searchCustomer($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+            <mat-option *ngFor="let customer of customerData"
+                        [value]="customer">{{customer.partner_customer_name}}</mat-option>
+        </mat-select>
+        <mat-form-field style="width: 100%;">
+            <mat-label>Người nhận</mat-label>
+            <input matInput [(ngModel)]="receiver_name">
+        </mat-form-field>
+    </div>
+    <div *ngIf="data.payment_method == 'FREE'">
+        <mat-label>Khách hàng</mat-label>
+        <mat-select placeholder="Khách hàng" [compareWith]="compareObjects" [(ngModel)]="customer_name" >
+            <ngx-mat-select-search placeholderLabel="Tìm khách hàng" (input)="searchCustomer($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+            <mat-option *ngFor="let customer of customerData"
+                        [value]="customer">{{customer.partner_customer_name}}</mat-option>
+        </mat-select>
+    </div>
+    <div *ngIf="data.payment_method == 'OTHER'">
+        <div fxFlex fxFlexAlign="start">
+            <div fxLayout="row wrap" fxLayout.xs="column wrap" >
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>TT cùng tiền phòng</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.room">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Khách nợ</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.debit">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Thanh toán thẻ</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.card">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Miễn phí</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.free">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Chuyển khoản</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.bank">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Voucher</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.voucher" readonly>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Tiền mặt</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.cash">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-label>Tiền tip</mat-label>
+                        <input type="number" matInput [(ngModel)]="paymentOther.tip">
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 25px)">
+                    <b>Tổng cộng: </b>
+                    {{(paymentOther.room + paymentOther.debit + paymentOther.card + paymentOther.free + paymentOther.bank + paymentOther.voucher + paymentOther.cash + paymentOther.tip) | number}}
+                </div>
+                <div fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 25px)">
+                    <b>Hóa đơn: </b> {{totalPrice | number}}
+                </div>
+                <div fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 25px)">
+                    <b>Lệch: </b>
+                    {{(paymentOther.room + paymentOther.debit + paymentOther.card + paymentOther.free + paymentOther.bank + paymentOther.voucher + paymentOther.cash + paymentOther.tip) - totalPrice  | number}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="green" (click)="pay()" >Cập nhật</button>
+</div>

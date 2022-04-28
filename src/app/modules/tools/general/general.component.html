@@ -1,0 +1,20 @@
+<mat-card style="max-width: 680px">
+    <mat-card-header>
+        <mat-card-title>Cấu hình chung</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="generalForm" novalidate (ngSubmit)="update()">
+            <div fxFlex fxFlexAlign="start">
+                <div fxLayout="row wrap" fxLayout.xs="column wrap" >
+                    <mat-form-field fxFlex.xs="calc(100%-25px)" fxFlex="calc(100% - 25px)">
+                        <input matInput placeholder="Tỉ giá USD" type="number" formControlName="usd" required>
+                    </mat-form-field>
+
+                    <mat-card-actions class="align-right" fxFlex.xs="calc(100%-25px)" fxFlex="calc(100% - 25px)">
+                        <button mat-raised-button color="primary" class="btn-block" type="submit" >Cập nhật</button>
+                    </mat-card-actions>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

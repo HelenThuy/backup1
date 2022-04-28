@@ -1,0 +1,156 @@
+<div  class="container"
+      fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="left"
+      fxLayoutGap="0"
+      fxLayoutGap.xs="0">
+    <div fxFlex="100%">
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Danh mục món ăn theo chi nhánh <span *ngIf="curBranch"> - <b>{{curBranch.branch_name}}</b></span></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="searchForm" novalidate (ngSubmit)="getItem()">
+                    <mat-form-field fxFlex.xs="calc(25%-25px)" fxFlex="calc(25% - 25px)">
+                        <input matInput placeholder="Tên sản phẩm" formControlName="keyword" autocomplete="off">
+                    </mat-form-field>
+                    <mat-form-field fxFlex.xs="calc(25%-25px)" fxFlex="calc(25% - 25px)">
+                        <mat-select placeholder="Danh mục" formControlName="category">
+                            <mat-option value="">Tất cả</mat-option>
+                            <mat-option *ngFor="let category of categories"
+                                        [value]="category">{{category.category_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field fxFlex.xs="calc(25%-25px)" fxFlex="calc(25% - 25px)">
+                        <mat-select placeholder="Trạng thái" #singleSelect formControlName="status" >
+                            <mat-option value="">Tất cả</mat-option>
+                            <mat-option value="0">Không kích hoạt</mat-option>
+                            <mat-option value="1">Kích hoạt</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">
+                        <button mat-raised-button color="primary" class="btn-block" type="submit" >Tìm kiếm</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card-content>
+
+
+<!--            <div class="align-right" style="margin: 10px">-->
+<!--                <button *ngIf="checked.length > 0" mat-raised-button class="mg-left-5" color="yellow" (click)="openEditMulti()">-->
+<!--                    <mat-icon >edit</mat-icon>-->
+<!--                    Chỉnh sửa ({{checked.length}})-->
+<!--                </button>-->
+<!--                <button *ngIf="checked.length <= 0" [disabled]="true" mat-raised-button class="mg-left-5" color="gray">-->
+<!--                    <mat-icon >edit</mat-icon>-->
+<!--                    Chỉnh sửa-->
+<!--                </button>-->
+<!--            </div>-->
+
+            <ngx-datatable style="margin: 0"
+                class='material expandable' #myTable
+                [columnMode]="'force'"
+                [rowHeight]="40"
+                [rows]='products'
+                [limit]="currentPageLimit"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                [reorderable]="true"
+                [scrollbarH]="true"
+                (page)='setPage($event)'
+                [messages]="{emptyMessage:'Không tìm thấy kết quả phù hợp.'}">
+
+                <!-- Column: STT-->
+                <ngx-datatable-column name="#" [maxWidth]="50">
+                    <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        {{ rowIndex + 1 }}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="category_parent_name" name="Mã quầy" [width]="100" >
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <input  class="form-control" type="text" [value]="value" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="category_name" name="Nhóm hàng hóa" [width]="150" >
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <input  class="form-control" type="text" [value]="value" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="product_code" name="Mã hàng hóa" [width]="200" >
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <span>{{value}}</span>
+                        <span *ngIf="!row.supplies" class="badge mat-bg-red mg-left-5">Thiếu vật tư</span>
+                        <span *ngIf="row.combo" class="badge mat-bg-primary mg-left-5">Combo</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="product_name" name="Tên hàng" [width]="150" >
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <input  class="form-control" type="text" [value]="value" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="unit_name" name="Đơn vị" [width]="100" >
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="price" name="Giá" [width]="100" >
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        {{value|number}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="status" name="Trạng thái" [width]="100" >
+                    <ng-template let-value="value"  ngx-datatable-cell-template>
+                        <span *ngIf="value == 1" >Kích hoạt</span>
+                        <span *ngIf="value != 1" >Không kích hoạt</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name=" " >
+                    <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        <button mat-button (click)="openEdit(row, rowIndex)">
+                            <mat-icon >edit</mat-icon>
+                        </button>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-footer>
+                    <ng-template
+                        ngx-datatable-footer-template
+                        let-rowCount="rowCount"
+                        let-pageSize="pageSize"
+                        let-selectedCount="selectedCount"
+                        let-curPage="curPage"
+                        let-offset="offset"
+                        let-isVisible="isVisible"
+                    >
+                        <div style="width: 65px; padding-left: 10px">Hiển thị </div>
+                        <div style="width: 80px; padding-left: 10px">
+                            <mat-select placeholder=" " id="per-page" [(ngModel)]="currentPageLimit" [(value)]="currentPageLimit" (selectionChange)="currentPageLimit = $event.value" >
+                                <mat-option *ngFor="let option of pageLimitOptions" value="{{option.value}}">
+                                    {{ option.value }}
+                                </mat-option>
+                            </mat-select>
+                        </div>
+                        <div style="width: 125px; padding-left: 10px"> Tổng {{rowCount}}</div>
+
+                        <datatable-pager
+                            [pagerLeftArrowIcon]="'datatable-icon-left'"
+                            [pagerRightArrowIcon]="'datatable-icon-right'"
+                            [pagerPreviousIcon]="'datatable-icon-prev'"
+                            [pagerNextIcon]="'datatable-icon-skip'"
+                            [page]="curPage"
+                            [size]="pageSize"
+                            [count]="rowCount"
+                            [hidden]="!((rowCount / pageSize) > 1)"
+                            (change)="table.onFooterPage($event)">
+                        </datatable-pager>
+                    </ng-template>
+                </ngx-datatable-footer>
+            </ngx-datatable>
+        </mat-card>
+    </div>
+
+</div>

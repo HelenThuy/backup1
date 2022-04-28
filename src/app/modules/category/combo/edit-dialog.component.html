@@ -1,0 +1,72 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Chỉnh sửa thông tin sản phẩm</h1>
+
+<div mat-dialog-content id="multi-edit-form" style="margin-top: 10px;padding: 10px 24px;">
+    <div fxFlex fxFlexAlign="start">
+        <div fxLayout="row wrap" fxLayout.xs="column wrap" >
+            <div fxFlex.xs="960px" fxFlex="960px">
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <span><b>Mã</b></span>
+                </div>
+                <div fxFlex.xs="calc(25%-25px)" fxFlex="calc(25% - 25px)">
+                    <span><b>Tên</b></span>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <span><b>Danh mục</b></span>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <span><b>Giá tiền</b></span>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <span><b>Đơn vị</b></span>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <span><b>Trạng thái</b></span>
+                </div>
+            </div>
+            <div *ngFor="let item of products; let i = index;" fxFlex.xs="960px" fxFlex="960px">
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <input matInput [(ngModel)]="item.product_code" required>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(25%-25px)" fxFlex="calc(25% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <input matInput [(ngModel)]="item.product_name" required>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-select [compareWith]="compareCategory" (selectionChange)="changeCategory($event.value, i)" [(ngModel)]="item.category_id" required>
+                            <mat-option *ngFor="let category of categories"
+                                        [value]="category">{{category.category_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <input matInput type="number" [(ngModel)]="item.price" required>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-select [compareWith]="compareObjects" (selectionChange)="changeUnit($event.value, i)" [(ngModel)]="item.unit_id" required>
+                            <mat-option *ngFor="let unit of units"
+                                        [value]="unit">{{unit.unit_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                    <mat-form-field style="width: 96%;">
+                        <mat-select [(ngModel)]="item.status" >
+                            <mat-option *ngFor="let s of status" [value]="s.status_id" >{{s.status_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div mat-dialog-actions class="align-right" style="margin-top: 10px;display: block">
+    <button mat-button color="green" (click)="save()">Lưu</button>
+</div>

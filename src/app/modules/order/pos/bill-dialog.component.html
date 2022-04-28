@@ -1,0 +1,96 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Danh sách bàn đang sử dụng</h1>
+<div mat-dialog-content style="margin-top: 10px;" *ngIf="show">
+        <mat-card style="box-shadow: none;">
+            <mat-form-field fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                <input matInput placeholder="Số hóa đơn" [(ngModel)]="receiptId" autocomplete="off">
+            </mat-form-field>
+            <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">
+                <button mat-raised-button color="primary"  (click)="searchBill()" class="btn-block" type="button" >Tìm kiếm</button>
+            </mat-card-actions>
+        </mat-card>
+
+    <ngx-datatable
+                   class='material'
+                   [columnMode]="'force'"
+                   [rowHeight]="40"
+                   [rows]='bills'
+                   [headerHeight]="50"
+                   [footerHeight]="50"
+                   [externalPaging]="true"
+                   [count]="hisCount"
+                   [limit]="5"
+                   (page)="pageCallback($event)"
+                   [messages]="{emptyMessage:'Không tìm thấy kết quả phù hợp.'}">
+
+        <!-- Column: STT-->
+<!--        <ngx-datatable-column name="#" [width]="50" >-->
+<!--            <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>-->
+<!--                {{ rowIndex + 1 }}-->
+<!--            </ng-template>-->
+<!--        </ngx-datatable-column>-->
+
+        <ngx-datatable-column prop="reservation_id" name="Số hóa đơn"   [width]="150"></ngx-datatable-column>
+
+        <ngx-datatable-column prop="total" name="Tổng tiền"  [width]="150">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+                {{value | number}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column prop="updated_at" name="Thời gian tạo" [width]="150" >
+            <ng-template let-value="value" ngx-datatable-cell-template>
+                {{value | unixToDateTime}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column prop="updated_by" name="Người tạo" [width]="100" ></ngx-datatable-column>
+
+        <ngx-datatable-column name=" " [width]="200" >
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                <button mat-button (click)="onSelect(row)">
+                    <mat-icon >edit</mat-icon>
+                </button>
+                <button  *ngIf="row.status == 'CHECKOUT'" mat-button (click)="onPrint(row._id)">
+                    <mat-icon >print</mat-icon>
+                </button>
+                <button  *ngIf="row.status == 'CHECKIN'" disabled="disabled" mat-button>
+                    <mat-icon >print</mat-icon>
+                </button>
+            </ng-template>
+        </ngx-datatable-column>
+
+<!--        <ngx-datatable-footer>-->
+<!--            <ng-template-->
+<!--                let-rowCount="rowCount"-->
+<!--                let-pageSize="pageSize"-->
+<!--                let-selectedCount="selectedCount"-->
+<!--                let-curPage="curPage"-->
+<!--                let-offset="offset"-->
+<!--                ngx-datatable-footer-template-->
+<!--            >-->
+
+<!--                <div style="width: 65px; padding-left: 10px">Hiển thị </div>-->
+<!--                <div style="width: 80px; padding-left: 10px">-->
+<!--                    <mat-select placeholder=" " id="per-page" [(ngModel)]="currentPageLimit" [(value)]="currentPageLimit" (selectionChange)="changePageLimit($event.value, curPage)">-->
+<!--                        <mat-option *ngFor="let option of pageLimitOptions" value="{{option.value}}">-->
+<!--                            {{ option.value }}-->
+<!--                        </mat-option>-->
+<!--                    </mat-select>-->
+<!--                </div>-->
+<!--                <div style="width: 125px; padding-left: 10px"> Tổng {{rowCount}}</div>-->
+
+<!--                <datatable-pager-->
+<!--                    [pagerLeftArrowIcon]="'datatable-icon-left'"-->
+<!--                    [pagerRightArrowIcon]="'datatable-icon-right'"-->
+<!--                    [pagerPreviousIcon]="'datatable-icon-prev'"-->
+<!--                    [pagerNextIcon]="'datatable-icon-skip'"-->
+<!--                    [page]="curPage"-->
+<!--                    [size]="pageSize"-->
+<!--                    [count]="rowCount"-->
+<!--                    [hidden]="false"-->
+<!--                    (change)="table.onFooterPage($event)">-->
+<!--                </datatable-pager>-->
+<!--            </ng-template>-->
+<!--        </ngx-datatable-footer>-->
+    </ngx-datatable>
+</div>

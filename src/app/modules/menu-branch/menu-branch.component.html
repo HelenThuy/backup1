@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Cấu hình menu theo chi nhánh</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngIf="branches">
+            <form [formGroup]="searchForm" novalidate (ngSubmit)="getProducts()">
+                <mat-form-field fxFlex.xs="calc(30%-25px)" fxFlex="calc(30% - 25px)">
+                    <mat-select placeholder="Chọn chi nhánh" formControlName="branch">
+                        <mat-option *ngFor="let branch of branches"
+                                    [value]="branch">{{branch.branch_name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">
+                    <button mat-raised-button color="primary" class="btn-block" type="submit" >Chọn</button>
+                </mat-card-actions>
+            </form>
+        </div>
+        <br />
+        <div *ngIf="products">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Tìm sản phẩm</mat-label>
+                <input matInput (input)="searchProduct($event)">
+            </mat-form-field>
+
+            <div  class="container"
+                  fxLayout
+                  fxLayout.xs="column"
+                  fxLayoutAlign="left"
+                  fxLayoutGap="0"
+                  fxLayoutGap.xs="0">
+
+                <div fxFlex="calc(50%-50px)">
+                    <select multiple id="availabelist" size="10" style="width:100%; height: 505px" [(ngModel)]="selectedToAdd" >
+                        <option *ngFor="let product of products" [value]="product" >{{product.product_name}}</option>
+                    </select>
+                </div>
+                <div fxFlex="100px" style="padding: 190px 15px 15px 15px">
+                    <button mat-raised-button style="width:100%; margin-bottom: 5px" (click)="assign()">
+                        <mat-icon style="margin-top: -3px;">keyboard_arrow_right</mat-icon>
+                    </button>
+                    <button mat-raised-button style="width:100%;" (click)="unAssign()">
+                        <mat-icon style="margin-top: -3px;">keyboard_arrow_left</mat-icon>
+                    </button>
+                </div>
+                <div fxFlex="calc(50%-50px)">
+                    <select multiple id="selectedList" size="10" style="width:100%; height: 505px" [(ngModel)]="selectedToRemove" >
+                        <option *ngFor="let product of assigned" [value]="product">{{product.product_name}}</option>
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <hr/>
+            <div>
+                <mat-card-actions class="align-right">
+                    <button mat-raised-button color="primary" class="btn-block" type="button" (click)="save()">Cập nhật</button>
+                </mat-card-actions>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

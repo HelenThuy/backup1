@@ -1,0 +1,121 @@
+<div  class="container"
+      fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="left"
+      fxLayoutGap="0"
+      fxLayoutGap.xs="0">
+    <div fxFlex="70%">
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Quản lý đơn vị tính</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="searchForm" novalidate (ngSubmit)="getUnits()">
+                    <mat-form-field fxFlex.xs="calc(30%-25px)" fxFlex="calc(30% - 25px)">
+                        <input matInput placeholder="Tên đơn vị" formControlName="keyword" autocomplete="off">
+                    </mat-form-field>
+                    <mat-form-field fxFlex.xs="calc(30%-25px)" fxFlex="calc(30% - 25px)">
+                        <mat-select placeholder="Trạng thái" #singleSelect formControlName="status" >
+                            <mat-option value="">Tất cả</mat-option>
+                            <mat-option value="0">Không kích hoạt</mat-option>
+                            <mat-option value="1">Kích hoạt</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">
+                        <button mat-raised-button color="primary" class="btn-block" type="submit" >Tìm kiếm</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card-content>
+
+            <div class="align-right" style="margin: 10px">
+                <button mat-raised-button color="green" (click)="add()">
+                    <mat-icon style="margin-top: -3px;">add</mat-icon>
+                    Thêm đơn vị tính
+                </button>
+            </div>
+            <ngx-datatable style="margin: 0"
+                class='material expandable'
+                [columnMode]="'force'"
+                [rowHeight]="40"
+                [rows]='units'
+                [limit]="15"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                [reorderable]="true"
+                [scrollbarH]="true"
+
+                [messages]="{emptyMessage:'Không tìm thấy kết quả phù hợp.'}">
+<!--                [selectionType]="SelectionType.single"-->
+<!--                (select)="onSelect($event)"-->
+                <!-- Column: STT-->
+                <ngx-datatable-column name="#" [maxWidth]="50">
+                    <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        {{ rowIndex + 1 }}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="unit_name" name="Tên đơn vị" [width]="200" >
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <input  class="form-control" type="text" [value]="value" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="unit_code" name="Mã đơn vị" [width]="100" >
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="status" name="Trạng thái" [width]="80" >
+                    <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        <mat-slide-toggle (change)="changeStatus(row, rowIndex)"
+                            class="example-margin"
+                            color="primary"
+                            checked="{{(value == 1)}}"
+                            disabled="false">
+                        </mat-slide-toggle>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name=" " [width]="80" >
+                    <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        <button mat-button  (click)="onSelect(row, rowIndex)">
+                            <mat-icon >edit</mat-icon>
+                        </button>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+        </mat-card>
+
+
+    </div>
+
+    <div fxFlex="30%" *ngIf="showEdit">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    {{ (isNew) ? 'Thêm đơn vị tính' : 'Sửa thông tin đơn vị tính' }}
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="unitForm" novalidate (ngSubmit)="update()">
+                    <mat-form-field >
+                        <input matInput placeholder="Tên đơn vị" formControlName="unit_name" required>
+                    </mat-form-field>
+                    <mat-form-field >
+                        <input matInput placeholder="Mã đơn vị" formControlName="unit_code" required>
+                    </mat-form-field>
+                    <mat-form-field >
+                        <mat-select placeholder="Trạng thái" [compareWith]="compareObjects" formControlName="status">
+                            <mat-option value="0">Không kích hoạt</mat-option>
+                            <mat-option value="1">Kích hoạt</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-card-actions  class="align-right">
+                        <button mat-raised-button color="primary" class="btn-block" type="submit" >Cập nhật</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

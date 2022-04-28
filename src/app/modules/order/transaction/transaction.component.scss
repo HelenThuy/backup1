@@ -1,0 +1,38 @@
+mat-form-field {
+    width: 100%;
+    margin: 0 25px 0 0;
+}
+.calendar-input {
+    padding-right: 5px;
+}
+.BOOKED {
+    padding: 1px 5px;
+    background-color: #d39c3f;
+    color: #fff;
+    border-radius: 2px;
+}
+.CANCEL {
+    padding: 1px 5px;
+    border-radius: 2px;
+    background-color: #f15c75;
+    color: #fff;
+}
+.CHECKIN {
+    color: #3b7fc4;
+}
+.CHECKOUT {
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background-color: #1d9c72;
+}
+mat-icon {
+    cursor: pointer;
+    margin-right: 5px;
+}
+.disabled {
+    cursor: not-allowed;
+    opacity: .5;
+    text-decoration: none;
+    pointer-events: none;
+}

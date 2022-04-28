@@ -1,0 +1,15 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Ghi chú và xác nhận hủy order</h1>
+<mat-error *ngIf="errorMsg">
+    <span>{{errorMsg}}</span>
+</mat-error>
+<div mat-dialog-content style="margin-top: 10px;">
+    <mat-form-field style="width: 95%;">
+        <mat-label>Ghi chú</mat-label>
+        <input matInput [(ngModel)]="note" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="green" (click)="save()">Xác nhận</button>
+    <button mat-button color="gray" (click)="close()">Đóng</button>
+</div>
+

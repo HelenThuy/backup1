@@ -1,0 +1,15 @@
+.box {
+  text-align: center;
+  width: 100%;
+  .box-button {
+    width: 6rem;
+    height: 6rem;
+    .icon-box-button {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  h2 {
+    margin-top: 10px !important;
+  }
+}

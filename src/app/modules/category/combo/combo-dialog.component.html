@@ -1,0 +1,157 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Thiết lập thông tin sản phẩm</h1>
+
+<div mat-dialog-content style="margin-top: 10px;">
+    <div fxFlex fxFlexAlign="start">
+        <div fxLayout="row wrap" fxLayout.xs="column wrap" >
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                <mat-form-field style="width: 96%;">
+                    <mat-select placeholder="Danh mục" [compareWith]="compareCategories" [(ngModel)]="item.category" required>
+                        <ngx-mat-select-search placeholderLabel="Tìm danh mục" (input)="searchCate($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+                        <mat-option *ngFor="let category of categories"
+                                    [value]="category">{{category.category_name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-error *ngIf="item.category == null && doCheck == true">
+                    <span>Vui lòng chọn danh mục</span>
+                </mat-error>
+            </div>
+
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                <mat-form-field style="width: 96%;">
+                    <mat-label>Tên sản phẩm</mat-label>
+                    <input matInput [(ngModel)]="item.product_name" required>
+                </mat-form-field>
+                <mat-error *ngIf="item.product_name == '' && doCheck == true">
+                    <span>Vui lòng nhập tên combo</span>
+                </mat-error>
+            </div>
+
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                <mat-form-field style="width: 96%;">
+                    <mat-label>Mã sản phẩm</mat-label>
+                    <input matInput [(ngModel)]="item.product_code" required>
+                </mat-form-field>
+                <mat-error *ngIf="item.product_code == '' && doCheck == true">
+                    <span>Vui lòng nhập mã combo</span>
+                </mat-error>
+            </div>
+
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                <mat-form-field style="width: 96%;">
+                    <mat-label>Giá sản phẩm</mat-label>
+                    <input matInput type="number" [(ngModel)]="item.price" required>
+                </mat-form-field>
+                <mat-error *ngIf="item.price <= 0 && doCheck == true">
+                    <span>Vui lòng nhập giá combo</span>
+                </mat-error>
+            </div>
+
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                <mat-form-field style="width: 96%;">
+                    <mat-select placeholder="Đơn vị" [compareWith]="compareObjects" [(ngModel)]="item.unit" required>
+                        <mat-option *ngFor="let unit of listUnit"
+                                    [value]="unit">{{unit.unit_name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-error *ngIf="item.unit == null && doCheck == true">
+                    <span>Vui lòng chọn đơn vị tính</span>
+                </mat-error>
+            </div>
+
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                <mat-form-field style="width: 96%;">
+                    <mat-select placeholder="Trạng thái" [(value)]="item.status" >
+                        <mat-option value="0" >Không kích hoạt</mat-option>
+                        <mat-option value="1" >Kích hoạt</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex.xs="calc(50%-25px)" fxFlex="calc(50%-25px)">
+                <div>
+                    <img width="100" height="100" src="{{(srcResult) ? globals.FILE_DOMAIN + srcResult : globals.FILE_DOMAIN + globals.NO_IMAGE_SERVER_URL}}" id="base64Img" class="span12 baseurlopa2">
+                </div>
+                <div>
+                    <button type="button" mat-raised-button (click)="fileInput.click()">Chọn ảnh</button>
+                    <input hidden (change)="onFileSelected()" accept="image/*" #fileInput type="file" id="file">
+                    <mat-error style="padding-top: 10px" *ngIf="srcError">
+                        <span>{{srcError}}</span>
+                    </mat-error>
+                </div>
+            </div>
+
+            <fieldset style="border: 1px solid #949494; margin-top: 14px" fxFlex.xs="calc(100%-25px)" fxFlex="calc(100% - 50px)">
+                <legend><b>Thiết lập vật tư tiêu hao</b></legend>
+                <div fxLayout="row" fxLayoutGap="25px"
+                     *ngFor="let supp of item.supplies; let i = index">
+
+                    <mat-form-field fxFlex="65">
+                        <mat-select placeholder="Chọn vật tư" #singleSelect [(ngModel)]="supp.name" [compareWith]="compareSuppObjects" >
+                            <ngx-mat-select-search placeholderLabel="Tìm vật tư" (input)="searchSup($event.target.value, i)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+                            <mat-option *ngFor="let item of supp.lists" [value]="item">{{item.supplies_name}} ({{item.unit}})</mat-option>
+                        </mat-select>
+
+                        <!--                <input matInput placeholder="Name" type="text"-->
+                        <!--                       name="name-{{i}}" [(ngModel)]="product.name">-->
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex>
+                        <input matInput placeholder="số lượng tiêu hao" type="number"
+                               name="value-{{i}}" [(ngModel)]="supp.value">
+                    </mat-form-field>
+
+                    <button mat-icon-button (click)='removeSupInput(i)'>
+                        <mat-icon>indeterminate_check_box</mat-icon>
+                    </button>
+
+                </div>
+                <mat-error *ngIf="error">
+                    <span>Vui lòng nhập thông tin sản phẩm</span>
+                </mat-error>
+                <div>
+                    <button mat-button color="blue" (click)="addSupInput()" >
+                        <mat-icon style="margin-top: -3px;">add</mat-icon>
+                    </button>
+                </div>
+            </fieldset>
+
+            <fieldset style="border: 1px solid #949494; margin-top: 14px" fxFlex.xs="calc(100%-25px)" fxFlex="calc(100% - 50px)">
+                <legend><b>Thiết lập sản phẩm trong combo (nếu là combo)</b></legend>
+                <div fxLayout="row" fxLayoutGap="25px"
+                     *ngFor="let product of item.combo; let i = index">
+
+                    <mat-form-field fxFlex="65">
+                        <mat-select placeholder="Chọn sản phẩm" #singleSelect [(ngModel)]="product.name" [compareWith]="compareObjects" >
+                            <ngx-mat-select-search placeholderLabel="Tìm sản phẩm" (input)="search($event.target.value, i)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+                            <mat-option *ngFor="let item of product.lists" [value]="item">{{item.product_name}}</mat-option>
+                        </mat-select>
+
+        <!--                <input matInput placeholder="Name" type="text"-->
+        <!--                       name="name-{{i}}" [(ngModel)]="product.name">-->
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex>
+                        <input matInput placeholder="Giá" type="number"
+                               name="value-{{i}}" [(ngModel)]="product.price">
+                    </mat-form-field>
+
+                    <button mat-icon-button (click)='removeInput(i)'>
+                        <mat-icon>indeterminate_check_box</mat-icon>
+                    </button>
+
+                </div>
+                <mat-error *ngIf="error">
+                    <span>Vui lòng nhập thông tin sản phẩm</span>
+                </mat-error>
+                <div>
+                    <button mat-button color="blue" (click)="addInput()" >
+                        <mat-icon style="margin-top: -3px;">add</mat-icon>
+                    </button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="align-right" style="margin-top: 10px;display: block">
+    <button mat-button color="green" (click)="save()" >Cập nhật</button>
+</div>

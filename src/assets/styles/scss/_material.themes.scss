@@ -1,0 +1,17 @@
+// Default Theme
+@include angular-material-theme($theme);
+
+// Dark Theme
+.app-dark {
+  @include angular-material-theme($dark-theme);
+}
+
+.mat-form-field {
+  @include mat-typography-level-to-styles($config, input);
+}
+
+.mat-form-field-appearance-legacy {
+  .mat-form-field-wrapper {
+    padding-bottom: $wrapper-padding-bottom;
+  }
+}

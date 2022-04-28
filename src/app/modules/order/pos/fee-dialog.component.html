@@ -1,0 +1,19 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Cập nhật thuế, phí dịch vụ</h1>
+<span style="color: red">** Thêm dấu '<b>%</b>' nếu muốn tính theo % hóa đơn</span>
+<div mat-dialog-content style="margin-top: 10px;">
+    <mat-form-field style="width: 100%;">
+        <mat-label>Giảm giá</mat-label>
+        <input matInput [(ngModel)]="data.discount">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Thuế</mat-label>
+        <input matInput [(ngModel)]="data.tax">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Phí dịch vụ</mat-label>
+        <input matInput [(ngModel)]="data.service">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="green" [mat-dialog-close]="data" >Cập nhật</button>
+</div>

@@ -1,0 +1,193 @@
+mat-form-field {
+    width: 100%;
+    margin: 0 25px 0 0;
+}
+button {
+    margin: 0 2.5px;
+}
+.btn-cat-con {
+    position: fixed;
+    top: 300px;
+    right: -136px;
+    z-index: 6;
+    width: 300px;
+    height: 40px;
+}
+.rotate {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.disabled {
+    cursor: not-allowed;
+    opacity: .5;
+    text-decoration: none;
+    pointer-events: none;
+}
+.pos-section-mat-drawer {
+    width: 460px;
+}
+.pos-section {
+    height: 782px;
+    border-radius: 2px;
+    //box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    background-color: #f5f5f5;
+    overflow: auto;
+}
+
+.pos-section .item {
+    margin: 10px;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    border: 1px solid grey;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    cursor: pointer;
+}
+.pos-section .item-nav {
+    margin: 5px;
+    width: 100px !important;
+    height: 70px !important;;
+    background-color: #ddd;
+}
+.flex-direction-column {
+    flex-direction: column;
+}
+.flex {
+    display: flex;
+}
+.pos-section .item-name {
+    text-align: center;
+    padding: 0;
+}
+.pos-section .menu {
+    margin: .25rem;
+}
+.justify-center {
+    justify-content: center;
+}
+.pos-section span.item-name {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.ticket-section {
+    min-height: 655px;
+    border-radius: 2px;
+    //box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+.pos-section .item-img {
+    height: 100px;
+    width: 124px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px 3px 0 0;
+}
+.pos-section h3.item-name {
+    height: 37px;
+    overflow: hidden;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+.pos-section .item-name {
+    text-align: center;
+    padding: 0;
+}
+div.item:hover {
+    background-color: grey;
+    color: white;
+    opacity: 0.6;
+}
+
+.item:active {
+    background-color: grey;
+    color: white;
+    opacity: 0.8;
+}
+.ticket-section th {
+    background-color: #428bca;
+    color: #fff;
+}
+.ticket-section td, .ticket-section th {
+    padding: .5rem;
+    vertical-align: middle;
+}
+.ticket-section tr:nth-child(even) {
+    background-color: #ddd;
+}
+.ticket-section .item {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    background-color: #f7f7f7;
+}
+.ticket-section .edit {
+    float: right;
+}
+.ticket-section .add, .ticket-section .del, .ticket-section .edit, .edit-fee {
+    color: grey;
+    vertical-align: middle;
+}
+.mat-icon {
+ background-repeat: no-repeat;
+ display: inline-block;
+ fill: currentColor;
+ height: 24px;
+ width: 24px;
+}
+.del:hover, .edit:hover, .add:hover, .edit-fee:hover {
+    color: black;
+    cursor: pointer;
+}
+.ticket-section .total {
+    padding: .25rem;
+    margin: 0;
+    width: 100%;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.text-right {
+    text-align: right;
+}
+#totalTable {
+    border-spacing: 0px;
+}
+#totalTable td {
+    padding: .5rem;
+}
+#pay-order button {
+    min-width: 90px;
+    margin: 0 2.5px 5px 0;
+}
+.order-item input {
+    background-color: white;
+    border: 1px solid gray;
+}
+.after-discount {
+    font-size: 12px;
+    color: #333;
+}
+.item-checked {
+    background-color: pink !important;
+}
+.item-cancel {
+    background-color: red !important;
+}
+.product-selected {
+    background-color: darkblue;
+    color: white;
+    opacity: 0.6;
+}

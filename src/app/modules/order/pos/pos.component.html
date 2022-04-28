@@ -1,0 +1,266 @@
+<!--<mat-card *ngIf="showBranch">-->
+<!--    <mat-card-header>-->
+<!--        <mat-card-title>Đặt món theo chi nhánh</mat-card-title>-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content>-->
+<!--        <form [formGroup]="searchForm" novalidate (ngSubmit)="getConfig()">-->
+<!--            <mat-form-field fxFlex.xs="calc(30%-25px)" fxFlex="calc(30% - 25px)">-->
+<!--                <mat-select placeholder="Chọn chi nhánh" formControlName="branch" [compareWith]="compareObjects">-->
+<!--                    <mat-option *ngFor="let branch of branches"-->
+<!--                                [value]="branch">{{branch.branch_name}}</mat-option>-->
+<!--                </mat-select>-->
+<!--            </mat-form-field>-->
+<!--            <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">-->
+<!--                <button mat-raised-button color="primary" class="btn-block" type="submit" >Tìm kiếm</button>-->
+<!--            </mat-card-actions>-->
+<!--        </form>-->
+<!--    </mat-card-content>-->
+<!--</mat-card>-->
+
+<div *ngIf="showContent">
+    <div  class="container"
+          fxLayout
+          fxLayout.xs="column"
+          fxLayoutAlign="left"
+          fxLayoutGap="0"
+          fxLayoutGap.xs="0">
+        <div fxFlex="40%">
+            <mat-card class="ticket-section">
+                <mat-card-content>
+                    <mat-form-field style="width: calc(100% - 100px)">
+                        <mat-select placeholder="Chọn bàn" [value]="curTable" (selectionChange)="curTable = $event.value;changeTable($event.value)" required [compareWith]="compareTableObjects">
+                            <ngx-mat-select-search placeholderLabel="Tìm kiếm" (input)="searchTable($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+                            <mat-option *ngFor="let table of tables"
+                                        [value]="table">{{table.table_name}} <b *ngIf="table.using">(Đang sử dụng)</b></mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button mat-raised-button color="green" (click)="openCommission()" >
+                        <mat-icon *ngIf="!commissionData.customer_name || (!commissionData.customer_name.partner_customer_name && !commissionData.receiver_name)" style="margin-top: -3px;">add</mat-icon>
+                        <mat-icon *ngIf="commissionData.customer_name && (commissionData.customer_name.partner_customer_name || commissionData.receiver_name)" style="margin-top: -3px;">check</mat-icon>
+                    </button>
+                    <mat-error >
+                        <span>{{errTable}}</span>
+                    </mat-error>
+                    <div>
+                        <span>
+                            <b>Khách hàng:</b> {{(commissionData.customer_name && commissionData.customer_name.partner_customer_name) ? commissionData.customer_name.partner_customer_name : "-"}} |
+                            <b>Người nhận:</b> {{(commissionData.customer_name && commissionData.receiver_name) ? commissionData.receiver_name : "-"}}
+                        </span>
+                    </div>
+                </mat-card-content>
+
+                <div style="height: 519px;overflow: auto;">
+                    <table class="items" style="width: 100%">
+                        <tr class="table-header">
+                            <th width="50%">Tên sản phẩm</th>
+                            <th width="10%" align="center">SL</th>
+                            <th align="center" width="15%">Giá</th>
+                            <th align="center" width="15%">Thành tiền</th>
+                            <th align="center" width="10%">
+                                <mat-icon  style="color: #fff;cursor: auto;" class="del">delete_sweep</mat-icon>
+                            </th>
+                            <th width="8%">
+                                <mat-icon>print</mat-icon>
+                            </th>
+                        </tr>
+                        <tr *ngFor="let item of tickets; let i = index" class="item order-item"
+                            [ngClass]="{'item-checked': (item.status == 'CHECKEDIN'),'item-cancel': (item.status == 'CANCEL' || item.status == 'CANCELLED')}">
+                            <td>
+                                {{item.product_name}}
+                                <mat-icon *ngIf="item.status == 'CHECKIN' || item.status == 'CHECKEDIN'" (click)="openNote(item, i)" class="edit">edit</mat-icon>
+                                <br/>
+                                <i *ngIf="item.note" style="font-size: 12px">{{item.note}}</i>
+                            </td>
+                            <td>
+                                <input *ngIf="item.status == 'CHECKIN'" style="width: calc(100% - 0.5em); text-align: center" matInput (input)="calculateTotal()"
+                                       [(ngModel)]="item.quantity" type="number" required autocomplete="false" autocomplete="off" />
+                                <span *ngIf="item.status != 'CHECKIN'">{{item.quantity | number}}</span>
+                            </td>
+                            <td>{{item.price | number:'1.0-0'}}</td>
+                            <td>
+                                <span class="text-right subtotal" id="subtotal_4751">{{(item.quantity*(item.price-item.discount_value)) | number:'1.0-0'}}</span>
+                                <br>
+                                <i class="after-discount">Đã giảm: <span class="text-right subtotal" >
+                                    {{(item.discount_value*item.quantity) | number:'1.0-0'}}
+                                </span></i>
+                            </td>
+                            <td align="center">
+                                <mat-icon *ngIf="item.status == 'CHECKIN'" (click)="removeItem(item)" class="del">cancel</mat-icon>
+                                <mat-icon *ngIf="item.status == 'CHECKEDIN'" (click)="cancelItem(item, i, 'cancel')" class="del">cancel</mat-icon>
+                                <mat-icon *ngIf="item.status == 'CANCEL'" (click)="cancelItem(item, i, 'un-cancel')" class="del">cancel</mat-icon>
+                            </td>
+                            <td><mat-checkbox  color="primary" [(ngModel)]="item.check_print"></mat-checkbox></td>
+                        </tr>
+                    </table>
+                </div>
+                <hr />
+                <div>
+                    <table style="width:100%; float:right; color:#000; background: #FFF;" id="totalTable">
+                        <tbody>
+                        <tr>
+                            <td>Mặt hàng</td>
+                            <td style="font-size: 14px; font-weight:bold;" class="text-right">
+                                <span id="titems">{{totalItem}} ({{cartNumItems}})</span>
+                            </td>
+                            <td>Thành tiền</td>
+                            <td style="font-size: 14px; font-weight:bold;" class="text-right"><span id="total">{{cartTotal | number:'1.0-0'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Giảm giá
+                                <mat-icon class="edit-fee" (click)="openDialog()">edit</mat-icon>
+                            </td>
+                            <td style="font-size: 14px; font-weight:bold;" class="text-right">
+                                <span id="discount">{{discount | number:'1.0-0'}}</span>
+                            </td>
+                            <td>
+                                Voucher
+                                <mat-icon class="edit-fee" (click)="openVoucherDialog()">edit</mat-icon>
+                            </td>
+                            <td style="font-size: 14px; font-weight:bold;" class="text-right">
+                                <span id="voucher">{{voucher | number:'1.0-0'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Thuế
+                                <mat-icon class="edit-fee" (click)="openDialog()">edit</mat-icon>
+                            </td>
+                            <td style="font-size: 14px; font-weight:bold;" class="text-right">
+                                <span id="ttax2">{{taxFee | number:'1.0-0'}}</span>
+                            </td>
+
+                            <td >
+                                <span *ngIf="curBranch._id !== '6177d4ae153c67c14676a1f4'">
+                                Phí dịch vụ
+                                </span>
+                                <span *ngIf="curBranch._id === '6177d4ae153c67c14676a1f4'">
+                                Express
+                                </span>
+                                <mat-icon class="edit-fee" (click)="openDialog()">edit</mat-icon>
+                            </td>
+                            <td style="font-weight:bold;" class="text-right">
+                                <span id="tds">{{serviceFee | number:'1.0-0'}}</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" style="border-top: 1px solid #666; font-weight:bold; background:#333; color:#FFF;">
+                                Tổng tiền thanh toán
+                            </td>
+                            <td colspan="2" style="font-size: 14px;border-top: 1px solid #666; font-weight:bold; background:#333; color:#FFF;" class="text-right">
+                                <span id="gtotal">{{totalPrice | number:'1.0-0'}}</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br style="clear: both" />
+                </div>
+                <mat-card-actions id="pay-order" class="summary align-right">
+                    <button mat-raised-button color="brown" (click)="openReport('/reports/nhahang/InBarcodeManicafe')" *ngIf="orderId != null">In Barcode</button>
+                    <button mat-raised-button color="red" (click)="clearCart()">Hủy</button>
+                    <button mat-raised-button color="blue" (click)="goOrder('CHECKIN')">Order</button>
+                    <button mat-raised-button color="green" (click)="goOrder('CHECKOUT')">Quick</button>
+                    <button mat-raised-button color="green" (click)="openPayment()" >Thanh toán</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div fxFlex="60%">
+            <mat-form-field >
+                <input type="text"
+                       placeholder="Tìm sản phẩm"
+                       matInput [formControl]="searchCtrl">
+            </mat-form-field>
+            <mat-card class="pos-section">
+                <div class="flex flex-direction-row flex-wrap menu justify-center">
+
+                    <div style="width: 124px; height: 136px; vertical-align: middle;" *ngFor="let item of products"
+                         (click)="addToCheck(item)"
+                         class="flex flex-direction-column item"
+                    >
+                        <div [ngStyle]="{'background-image': 'url(' + ((item.image_url) ? globals.FILE_DOMAIN + item.image_url : globals.NO_IMAGE_URL) + ')'}"
+                             class="item-img"></div>
+                        <h3 class="item-name" title="{{item.product_name}}">{{item.product_name}}</h3>
+                    </div>
+
+                    <h3 *ngIf="!products || products.length < 1">Danh mục hiện tại chưa có sản phẩm nào</h3>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="rotate btn-cat-con" >
+        <div *ngIf="branchConfiGiatla.indexOf(curBranch._id) == -1">
+            <button [ngClass]="{'disabled':!showCake}"
+                    mat-raised-button color="yellow" (click)="showHiddenButtonBarCookNav('cake');cake.toggle()">Quầy bánh
+            </button>
+            <button [ngClass]="{'disabled':!showCook}"
+                    mat-raised-button color="primary" (click)="showHiddenButtonBarCookNav('cook');cook.toggle()">Nhà bếp
+            </button>
+            <button [ngClass]="{'disabled':!showBar}" style="background-color: #428BCA; color: white" mat-raised-button
+                    (click)="showHiddenButtonBarCookNav('bar'); bar.toggle()">Quầy bar
+            </button>
+        </div>
+<!--
+        Với chi nhánh giặt là thì hiển thị nút giặt là
+-->
+        <div *ngIf="branchConfiGiatla.indexOf(curBranch._id) > -1">
+            <button [ngClass]="{'disabled':!showGiatla}"
+                    mat-raised-button style="background-color: #428BCA; color: white" (click)="showHiddenButtonBarCookNav('giatla');giatla.toggle()">Giặt là
+            </button>
+        </div>
+    </div>
+
+    <mat-drawer class="pos-section pos-section-mat-drawer" #cook [perfectScrollbar]="config" position="end"
+                mode="over"
+                opened="false">
+        <div class="flex flex-direction-row flex-wrap menu justify-center">
+            <div *ngFor="let item of productCookCategories" (click)="selectedCategory(item, 100, 1);cook.toggle()"
+                 class="flex flex-direction-column item item-nav">
+                <span class="item-name">{{item.category_name}}</span>
+            </div>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer class="pos-section pos-section-mat-drawer" #bar [perfectScrollbar]="config" position="end"
+                mode="over"
+                opened="false">
+        <div class="flex flex-direction-row flex-wrap menu justify-center">
+            <div *ngFor="let item of productBarCategories" (click)="selectedCategory(item, 100, 1);bar.toggle()"
+                 class="flex flex-direction-column item item-nav">
+                <span class="item-name">{{item.category_name}}</span>
+            </div>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer class="pos-section pos-section-mat-drawer" #cake [perfectScrollbar]="config" position="end"
+                mode="over"
+                opened="false">
+        <div class="flex flex-direction-row flex-wrap menu justify-center">
+            <div *ngFor="let item of productCakeCategories" (click)="selectedCategory(item, 100, 1);cake.toggle()"
+                 class="flex flex-direction-column item item-nav">
+                <span class="item-name">{{item.category_name}}</span>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer class="pos-section pos-section-mat-drawer" #giatla [perfectScrollbar]="config" position="end"
+                mode="over"
+                opened="false">
+        <div class="flex flex-direction-row flex-wrap menu justify-center">
+            <div *ngFor="let item of productGiatlaCategories" (click)="selectedCategory(item, 100, 1);giatla.toggle()"
+                 class="flex flex-direction-column item item-nav">
+                <span class="item-name">{{item.category_name}}</span>
+            </div>
+        </div>
+    </mat-drawer>
+</div>
+
+<mat-card *ngIf="!showPos">
+    <mat-card-content>
+        <b>Chi nhánh của bạn đang bảo trì, vui lòng liên hệ quản lý!</b>
+    </mat-card-content>
+</mat-card>
+
+<button mat-fab color="warn" class="mat-fab-bottom-right" (click)="openBillList()" style="z-index: 9;">
+    <mat-icon class="mat-24">receipt</mat-icon>
+</button>

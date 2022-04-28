@@ -1,0 +1,16 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Cập nhật voucher</h1>
+<span style="color: red">{{error}}</span>
+<div mat-dialog-content style="margin-top: 10px;">
+    <mat-form-field style="width: 100%;">
+        <mat-label>Mã chương trình</mat-label>
+        <input matInput [(ngModel)]="data.voucher_type_code">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Mã Voucher</mat-label>
+        <input matInput [(ngModel)]="data.voucher_number" type="text" min="0">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="green" (click)="applyVoucher()">Áp dụng</button>
+    <button mat-button color="brown" (click)="clearVoucher()">Hủy</button>
+</div>

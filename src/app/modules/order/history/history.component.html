@@ -1,0 +1,252 @@
+<div  class="container"
+      fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="left"
+      fxLayoutGap="0"
+      fxLayoutGap.xs="0">
+    <div fxFlex="100%">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Tổng hợp order<span *ngIf="curBranch"> - chi nhánh <b>{{curBranch.branch_name}}</b></span> </mat-card-title>
+            </mat-card-header>
+<!--            <br />-->
+<!--            <mat-card-content>-->
+<!--                <div *ngIf="branches">-->
+<!--                    <form [formGroup]="searchForm" novalidate (ngSubmit)="changeBranch()">-->
+<!--                        <mat-form-field fxFlex.xs="calc(30%-25px)" fxFlex="calc(30% - 25px)">-->
+<!--                            <mat-select placeholder="Chọn chi nhánh" formControlName="branch" [compareWith]="compareObjects">-->
+<!--                                <mat-option *ngFor="let branch of branches"-->
+<!--                                            [value]="branch">{{branch.branch_name}}</mat-option>-->
+<!--                            </mat-select>-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">-->
+<!--                            <button mat-raised-button color="primary" class="btn-block" type="submit" >Chọn</button>-->
+<!--                        </mat-card-actions>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </mat-card-content>-->
+
+            <mat-card-content>
+                <div *ngIf="searchForm">
+                    <form [formGroup]="searchOrderForm" novalidate (ngSubmit)="getOrders()">
+                        <mat-form-field fxFlex.xs="calc(15%-25px)" fxFlex="calc(15% - 25px)">
+                            <input matInput placeholder="Số hóa đơn" formControlName="receipt" autocomplete="off">
+                        </mat-form-field>
+                        <mat-form-field fxFlex.xs="calc(15%-25px)" fxFlex="calc(15%-25px)" class="margin-input">
+                            <input matInput (dateChange)="minTo = $event.value" [matDatepicker]="picker" [max]="maxFrom" (click)="picker.open()" placeholder="Từ ngày"
+                                   formControlName="from" autocomplete="off">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex.xs="calc(15%-25px)" fxFlex="calc(15%-25px)" class="margin-input">
+                            <input matInput (dateChange)="maxFrom = $event.value" [matDatepicker]="picker2" (click)="picker2.open()" [min]="minTo" placeholder="Đến ngày"
+                                   formControlName="to" autocomplete="off">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                        <mat-card-actions fxFlex.xs="calc(20%-25px)" fxFlex="calc(20% - 25px)">
+                            <button mat-raised-button color="primary" class="btn-block" type="submit" >Tìm kiếm</button>
+                        </mat-card-actions>
+                    </form>
+                </div>
+            </mat-card-content>
+
+            <ngx-datatable style="margin: 0"
+                           #myTable
+                           class='material expandable'
+                           [columnMode]="'force'"
+                           [rowHeight]="40"
+                           [rows]='orders'
+                           [headerHeight]="74"
+                           [footerHeight]="50"
+                           [reorderable]="false"
+                           [scrollbarH]="false"
+                           [externalPaging]="true"
+                           [count]="hisCount"
+                           [limit]="currentPageLimit"
+                           (page)="pageCallback($event)"
+                           [messages]="{emptyMessage:'Không tìm thấy kết quả phù hợp.'}">
+
+                <ngx-datatable-row-detail rowHeight="'auto'" #myDetailRow>
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+                        <ngx-datatable
+                            class='material'
+                            [columnMode]="'force'"
+                            [headerHeight]="'auto'"
+                            [footerHeight]="50"
+                            [rowHeight]="'auto'"
+                            [limit]="5"
+                            [rows]='detail'
+                            [rowClass]="onGetRowClass"
+                            [messages]="{emptyMessage:'Không tìm thấy thông tin hóa đơn.'}">
+
+                            <ngx-datatable-column prop="product_code" name="Mã sản phẩm" [width]="100">
+                                <ng-template let-value="value" ngx-datatable-cell-template>
+                                    <input  class="form-control" type="text" [value]="value" readonly/>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column prop="product_name" name="Tên sản phẩm" [width]="100">
+                                <ng-template let-value="value" ngx-datatable-cell-template>
+                                    <input  class="form-control" type="text" [value]="value" readonly/>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column prop="quantity" name="SL"  [width]="50"></ngx-datatable-column>
+                            <ngx-datatable-column prop="note" name="Ghi chú" >
+                                <ng-template let-value="value" ngx-datatable-cell-template>
+                                    <input  class="form-control" type="text" [value]="value" readonly/>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </ng-template>
+                </ngx-datatable-row-detail>
+
+                <ngx-datatable-column name="" [maxWidth]="50">
+                    <ng-template let-rowIndex="rowIndex"  let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <a href="javascript:void(0)"
+                           [class.datatable-icon-right]="!expanded"
+                           [class.datatable-icon-down]="expanded"
+                           title="Expand/Collapse Row"
+                           (click)="toggleExpandRow(row, rowIndex)"
+                        >
+                        </a>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="reservation_id" name="Số hóa đơn"  [width]="100"></ngx-datatable-column>
+
+                <ngx-datatable-column prop="total" name="Tổng tiền" [width]="100">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        {{value | number}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="updated_at" name="Thời gian tạo"  [width]="150">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        {{value | unixToDateTime}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="created_by" name="Người tạo"  [width]="150">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="patient_fullname" name="Khách hàng"  [width]="150">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <input *ngIf="row.order_type != 'DOANNHAHANG' || row.commission.customer_name" class="form-control" type="text" [value]="row.commission.customer_name" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="patient_fullname" name="Người nhận"  [width]="150">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <input *ngIf="row.order_type != 'DOANNHAHANG' || row.commission.receiver_name" class="form-control" type="text" [value]="row.commission.receiver_name" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="patient_fullname" name="Tên bệnh nhân"  [width]="150">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <input  class="form-control" type="text" [value]="value" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="table" name="Nơi đặt"  [width]="250">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <input  class="form-control" type="text" [value]="(row.room_name && row.bed_name) ? row.room_name + ' | ' + row.bed_name : value.table_name" readonly/>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="status" name="Trạng thái" >
+                    <ng-template let-value="value" ngx-datatable-header-template>
+                        <div>
+                            <p>Trạng thái</p>
+                            <div>
+                                <mat-select style="border-bottom: 1px solid #949494;padding-bottom: 2px;"
+                                            placeholder="Chọn trạng thái" [(ngModel)]="curStatus" (selectionChange)="getOrders()">
+                                    <mat-option value="">Tất cả</mat-option>
+                                    <mat-option value="BOOKED">BOOKED</mat-option>
+                                    <mat-option value="CHECKIN">CHECKIN</mat-option>
+                                    <mat-option value="CHECKOUT">CHECKOUT</mat-option>
+                                    <mat-option value="CANCEL">CANCEL</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        <span style="font-weight: bold" [ngClass]="value">{{value}}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column prop="status" name=" ">
+                    <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        <mat-icon *ngIf="value === 'BOOKED'" class="add"
+                                  (click)="selectStatus(row, 'CHECKIN')">add_alert
+                        </mat-icon>
+                        <mat-icon *ngIf="value === 'CHECKIN'" class="add" (click)="selectStatus(row, 'CHECKOUT')"
+                                  style="color: #1d9c72">done_outline
+                        </mat-icon>
+
+                        <mat-icon *ngIf="value === 'CANCEL'" class="add" style="color: gray">report_off</mat-icon>
+                        <mat-icon *ngIf="value === 'CANCEL'" class="add" style="color: gray">clear</mat-icon>
+
+                        <mat-icon *ngIf="value === 'CHECKOUT'" class="add" style="color: #1d9c72">done_all</mat-icon>
+                        <mat-icon *ngIf="value !== 'CHECKOUT' && value !== 'CANCEL' || (value == 'CHECKOUT' && curRole && (curRole.role_id == 1 || curRole.role_id == 2))" class="add"
+                                  (click)="selectStatus(row, 'CANCEL')" style="color: red">clear
+                        </mat-icon>
+                        <mat-icon *ngIf="value === 'CHECKOUT' && (!curRole || (curRole.role_id != 1 && curRole.role_id != 2))" class="add" style="color: gray">clear</mat-icon>
+
+                        <div style="display: inline-block">
+                            <mat-icon [ngClass]="{'disabled':value === 'BOOKED' || value === 'CANCEL'}"  disabled (click)="onPrint(row._id, value)" class="add"
+                            >print
+                            </mat-icon>
+                        </div>
+
+                        <mat-icon *ngIf="curRole && (curRole.role_id == 1 || (curRole.role_id == 2 && checkTime(row.updated_at))) " title="Sửa hình thức thanh toán" mat-button (click)="openForm(row, rowIndex)">
+                            edit
+                        </mat-icon>
+
+<!--                        <mat-icon *ngIf="value === 'CHECKIN' || value === 'BOOKED'" mat-button title="Sửa ghi chú" (click)="openNoteEdit(row, rowIndex)">-->
+<!--                            edit_note-->
+<!--                        </mat-icon>-->
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-footer>
+                    <ng-template
+                        let-rowCount="rowCount"
+                        let-pageSize="pageSize"
+                        let-selectedCount="selectedCount"
+                        let-curPage="curPage"
+                        let-offset="offset"
+                        ngx-datatable-footer-template
+                    >
+
+                        <div style="width: 65px; padding-left: 10px">Hiển thị </div>
+                        <div style="width: 80px; padding-left: 10px">
+                            <mat-select placeholder=" " id="per-page" [(ngModel)]="currentPageLimit" [(value)]="currentPageLimit" (selectionChange)="changePageLimit($event.value, curPage)">
+                                <mat-option *ngFor="let option of pageLimitOptions" value="{{option.value}}">
+                                    {{ option.value }}
+                                </mat-option>
+                            </mat-select>
+                        </div>
+                        <div style="width: 125px; padding-left: 10px"> Tổng {{rowCount}}</div>
+
+                        <datatable-pager
+                            [pagerLeftArrowIcon]="'datatable-icon-left'"
+                            [pagerRightArrowIcon]="'datatable-icon-right'"
+                            [pagerPreviousIcon]="'datatable-icon-prev'"
+                            [pagerNextIcon]="'datatable-icon-skip'"
+                            [page]="curPage"
+                            [size]="pageSize"
+                            [count]="rowCount"
+                            [hidden]="false"
+                            (change)="table.onFooterPage($event)">
+                        </datatable-pager>
+                    </ng-template>
+                </ngx-datatable-footer>
+            </ngx-datatable>
+        </mat-card>
+    </div>
+</div>

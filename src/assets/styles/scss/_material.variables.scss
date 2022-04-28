@@ -1,0 +1,101 @@
+@import '~@angular/material/theming';
+
+$mat-green-hn: (
+    50: #E4F3EE,
+    100: #BBE1D5,
+    200: #a5d6a7,
+    300: #8ECEB9,
+    400: #61BA9C,
+    500: #1d9c72,
+    600: #61BA9C,
+    700: #158A5F,
+    800: #118055,
+    900: #0A6E42,
+    A100: #A0FFD0,
+    A200: #6DFFB7,
+    A400: #3AFF9F,
+    A700: #20FF92,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $dark-primary-text,
+        A400: $dark-primary-text,
+        A700: $dark-primary-text,
+    )
+);
+
+$primary: mat-palette($mat-green-hn);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+$warn: mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+$background: map-get($theme, background);
+$foreground: map-get($theme, foreground);
+$wrapper-padding-bottom: 1em;
+
+@include mat-core();
+
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+$dark-background: map-get($dark-theme, background);
+$dark-foreground: map-get($dark-theme, foreground);
+
+@function mat-typography-config(
+  $font-family:   'Roboto, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(inherit, 1.825, 400)
+) {
+
+  // Declare an initial map with all of the levels.
+  $config: (
+          display-4:      $display-4,
+          display-3:      $display-3,
+          display-2:      $display-2,
+          display-1:      $display-1,
+          headline:       $headline,
+          title:          $title,
+          subheading-2:   $subheading-2,
+          subheading-1:   $subheading-1,
+          body-2:         $body-2,
+          body-1:         $body-1,
+          caption:        $caption,
+          button:         $button,
+          input:          $input,
+  );
+
+  // Loop through the levels and set the `font-family` of the ones that don't have one to the base.
+  // Note that Sass can't modify maps in place, which means that we need to merge and re-assign.
+  @each $key, $level in $config {
+    @if map-get($level, font-family) == null {
+      $new-level: map-merge($level, (font-family: $font-family));
+      $config: map-merge($config, ($key: $new-level));
+    }
+  }
+
+  // Add the base font family to the config.
+  @return map-merge($config, (font-family: $font-family));
+}
+
+$config: mat-typography-config();

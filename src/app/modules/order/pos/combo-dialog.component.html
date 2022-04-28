@@ -1,0 +1,23 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Chọn món theo combo</h1>
+<mat-error *ngIf="error">
+    <span>{{error}}</span>
+</mat-error>
+<div mat-dialog-content style="margin-top: 10px;">
+    <mat-card class="pos-section" style="min-height: 444px;">
+        <div class="flex flex-direction-row flex-wrap menu justify-center">
+            <div style="width: 124px; height: 136px; vertical-align: middle;" *ngFor="let item of products"
+                 (click)="addToCheck(item)"
+                 class="flex flex-direction-column item"
+                 [ngClass]="{'product-selected': (item == selectedItem)}"
+            >
+                <div [ngStyle]="{'background-image': 'url(' + ((item.image_url) ? globals.FILE_DOMAIN + item.image_url : globals.NO_IMAGE_URL) + ')'}"
+                     class="item-img"></div>
+                <h3 class="item-name" title="{{item.product_name}}">{{item.product_name}}</h3>
+            </div>
+
+        </div>
+    </mat-card>
+</div>
+<div mat-dialog-actions class="align-right" style="display: block;">
+    <button mat-button color="green" (click)="submit()" >Cập nhật</button>
+</div>

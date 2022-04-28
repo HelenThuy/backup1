@@ -1,0 +1,2415 @@
+{
+  "took": "0",
+  "status": true,
+  "results": [
+    {
+      "_id": {
+        "service_category_parent_id": 6
+      },
+      "data": [
+        {
+          "service_category_id": 6,
+          "exams": [
+            {
+              "current_day_time": 1576515601,
+              "services": [
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f31bd67c669f7f8b6afa"
+                    },
+                    "form_id": 5,
+                    "service_name": "Kh\u00e1m c\u1ea5p c\u1ee9u",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 6,
+                    "service_category_name": "Khám bệnh",
+                    "service_category_parent_id": 6,
+                    "service_category_parent_name": "Khám bệnh",
+                    "pharmas": [
+                      {
+                        "detail": [
+                          {
+                            "pharma_id": 871,
+                            "pharma_category_id": 188,
+                            "unit_id": 798,
+                            "manufacturer_id": 5803,
+                            "country_id": 110,
+                            "ingredient_id": null,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 1,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 1,
+                            "unit_exchange": 1,
+                            "unit_standard_id": 834,
+                            "pharma_way_to_use": [
+                              {
+                                "way_to_use_id": 1594,
+                                "way_to_use_name": "Truy\u1ec1n d\u1ecbch"
+                              }
+                            ],
+                            "pharma_code": "TDT0033",
+                            "pharma_dosage": "500ml",
+                            "pharma_name": "Natriclorid 0.9% truy\u1ec1n Braun",
+                            "pharma_name_en": "Natriclorid 0.9% truy\u1ec1n Braun",
+                            "pharma_dosage_detail": "",
+                            "pharma_ingredient_detail": [
+                              {
+                                "ingredient_id": 1703,
+                                "ingredient_name": "Natriclorid"
+                              }
+                            ],
+                            "ingredient_name": null,
+                            "pharma_insurance": null,
+                            "pharma_image": "text",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              430,
+                              432,
+                              437,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              464,
+                              470,
+                              482,
+                              484,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 798,
+                              "unit_code": "TCHAI",
+                              "unit_name": "Chai",
+                              "unit_name_en": "Chai",
+                              "unit_type_id": 1,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 33075,
+                            "sum": "38",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1,
+                            "price_old": 33075,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 13956,
+                            "pharma_category_id": 141,
+                            "unit_id": 831,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": null,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 2,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [],
+                            "pharma_code": "VTTH084",
+                            "pharma_dosage": null,
+                            "pharma_name": "D\u00e2y th\u00f4ng ti\u1ec3u 1 nh\u00e1nh 14 \/ Sonde Naleton",
+                            "pharma_name_en": "Day thong ti\u1ec3u 1 nhanh 14 \/ Sonde Naleton",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [],
+                            "ingredient_name": null,
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              437,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              470,
+                              482,
+                              484,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 831,
+                              "unit_code": "VSOI",
+                              "unit_name": "S\u1ee3i",
+                              "unit_name_en": "S\u1ee3i",
+                              "unit_type_id": 2,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 20000,
+                            "sum": "10",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1,
+                            "price_old": 20000,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 13959,
+                            "pharma_category_id": 141,
+                            "unit_id": 821,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": null,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 2,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [],
+                            "pharma_code": "VTTH081",
+                            "pharma_dosage": null,
+                            "pharma_name": "B\u01a1m ti\u00eam 10cc",
+                            "pharma_name_en": "B\u01a1m tiem 10cc",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [],
+                            "ingredient_name": null,
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              430,
+                              432,
+                              434,
+                              435,
+                              437,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              464,
+                              470,
+                              482,
+                              484,
+                              486,
+                              487,
+                              489,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 821,
+                              "unit_code": "VCAI",
+                              "unit_name": "C\u00e1i",
+                              "unit_name_en": "C\u00e1i",
+                              "unit_type_id": 2,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 3000,
+                            "sum": "545",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1,
+                            "price_old": 3000,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 14768,
+                            "pharma_category_id": 188,
+                            "unit_id": 870,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": 2329,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 1,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [
+                              {
+                                "way_to_use_id": 1610,
+                                "way_to_use_name": "Ti\u00eam"
+                              }
+                            ],
+                            "pharma_code": "TDT0029",
+                            "pharma_dosage": "5ml",
+                            "pharma_name": "N\u01af\u1edaC C\u1ea4T PHA TI\u00caM 5ml Vidipha",
+                            "pharma_name_en": "N\u01af\u1edaC C\u1ea4T PHA TIEM 5ml Vidipha",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [
+                              {
+                                "ingredient_id": 2329,
+                                "ingredient_name": "N\u01b0\u1edbc C\u1ea5t 5ml Vidipha"
+                              }
+                            ],
+                            "ingredient_name": "N\u01b0\u1edbc C\u1ea5t 5ml Vidipha",
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              437,
+                              439,
+                              444,
+                              445,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              464,
+                              470,
+                              482,
+                              484,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 870,
+                              "unit_code": "VONG",
+                              "unit_name": "\u1ed0ng",
+                              "unit_name_en": "\u1ed0ng",
+                              "unit_type_id": 2,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "ingredient": {
+                              "ingredient_id": 2329,
+                              "ingredient_code": "NC5",
+                              "ingredient_name": "N\u01b0\u1edbc C\u1ea5t 5ml Vidipha",
+                              "ingredient_name_en": null,
+                              "ingredient_category_id": null,
+                              "ingredient_category_code": null,
+                              "ingredient_category_name": null,
+                              "ingredient_category_parent": null,
+                              "ingredient_category_level": null,
+                              "active": 1,
+                              "is_del": null
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 2080,
+                            "sum": "7",
+                            "number_morning": 2,
+                            "number_day": 1,
+                            "quantity": 2,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 2,
+                            "price_old": 2080,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 13697,
+                            "pharma_category_id": 141,
+                            "unit_id": 821,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": null,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 2,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [],
+                            "pharma_code": "VTTH291",
+                            "pharma_dosage": null,
+                            "pharma_name": "Bao c\u00e2u n\u01b0\u1edbc ti\u1ec3u \/ T\u00fai ti\u1ec3u",
+                            "pharma_name_en": "Bao cau n\u01b0\u1edbc ti\u1ec3u \/ Tui ti\u1ec3u",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [],
+                            "ingredient_name": null,
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              437,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              470,
+                              482,
+                              484,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 821,
+                              "unit_code": "VCAI",
+                              "unit_name": "C\u00e1i",
+                              "unit_name_en": "C\u00e1i",
+                              "unit_type_id": 2,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 13000,
+                            "sum": "15",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1,
+                            "price_old": 13000,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 14030,
+                            "pharma_category_id": 141,
+                            "unit_id": 865,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": null,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 2,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [],
+                            "pharma_code": "VTTH008",
+                            "pharma_dosage": null,
+                            "pharma_name": "G\u0103ng tay ti\u1ec7t tr\u00f9ng H\u1ed9p\/50",
+                            "pharma_name_en": "G\u0103ng tay ti\u1ec7t trung H\u1ed9p\/50",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [],
+                            "ingredient_name": null,
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              430,
+                              434,
+                              437,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              464,
+                              470,
+                              482,
+                              484,
+                              487,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 865,
+                              "unit_code": "VDOI",
+                              "unit_name": "\u0110\u00f4i",
+                              "unit_name_en": "\u0110\u00f4i",
+                              "unit_type_id": 2,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 14000,
+                            "sum": "214",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1,
+                            "price_old": 14000,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 13520,
+                            "pharma_category_id": 141,
+                            "unit_id": 821,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": null,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 2,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [],
+                            "pharma_code": "VTTH509",
+                            "pharma_dosage": null,
+                            "pharma_name": "Mask th\u1edf oxy c\u00f3 t\u00fai \/ M\u1eb7t n\u1ea1 oxy c\u00f3 t\u00fai",
+                            "pharma_name_en": "Mask th\u1edf oxy co tui \/ M\u1eb7t n\u1ea1 oxy co tui",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [],
+                            "ingredient_name": null,
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              430,
+                              437,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              457,
+                              458,
+                              470,
+                              482,
+                              484,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 821,
+                              "unit_code": "VCAI",
+                              "unit_name": "C\u00e1i",
+                              "unit_name_en": "C\u00e1i",
+                              "unit_type_id": 2,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 38000,
+                            "sum": "45",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1,
+                            "price_old": 38000,
+                            "indexChoice": []
+                          },
+                          {
+                            "pharma_id": 14771,
+                            "pharma_category_id": 188,
+                            "unit_id": 798,
+                            "manufacturer_id": null,
+                            "country_id": null,
+                            "ingredient_id": 2095,
+                            "pharma_is_insurance": 0,
+                            "active": 1,
+                            "supply_id": 1,
+                            "manage_expire_date": 0,
+                            "pharma_interested": 0,
+                            "pharma_health_insurance": 0,
+                            "pharma_insurance_all": 0,
+                            "unit_exchange": 1,
+                            "unit_standard_id": null,
+                            "pharma_way_to_use": [
+                              {
+                                "way_to_use_id": 1610,
+                                "way_to_use_name": "Ti\u00eam"
+                              }
+                            ],
+                            "pharma_code": "TDT0042",
+                            "pharma_dosage": "100ml",
+                            "pharma_name": "N\u01af\u1edaC C\u1ea4T PHA TI\u00caM 100ML BRAUN",
+                            "pharma_name_en": "N\u01af\u1edaC C\u1ea4T PHA TIEM 100ML BRAUN",
+                            "pharma_dosage_detail": null,
+                            "pharma_ingredient_detail": [
+                              {
+                                "ingredient_id": 2095,
+                                "ingredient_name": "N\u01b0\u1edbc c\u1ea5t"
+                              }
+                            ],
+                            "ingredient_name": "N\u01b0\u1edbc c\u1ea5t",
+                            "pharma_insurance": null,
+                            "pharma_image": "https:\/\/his-filesvr-nih.smarthos.vnassets\/images\/hongngoc.png",
+                            "deactive_branch": null,
+                            "warehouse_id": [
+                              428,
+                              429,
+                              432,
+                              437,
+                              439,
+                              444,
+                              445,
+                              447,
+                              453,
+                              454,
+                              455,
+                              456,
+                              457,
+                              458,
+                              470,
+                              482,
+                              484,
+                              493
+                            ],
+                            "is_del": 0,
+                            "unit": {
+                              "unit_id": 798,
+                              "unit_code": "TCHAI",
+                              "unit_name": "Chai",
+                              "unit_name_en": "Chai",
+                              "unit_type_id": 1,
+                              "active": 1,
+                              "unit_basic_id": 0,
+                              "unit_basic_exchange": 1,
+                              "is_basic": 1
+                            },
+                            "ingredient": {
+                              "ingredient_id": 2095,
+                              "ingredient_code": "nc1",
+                              "ingredient_name": "N\u01b0\u1edbc c\u1ea5t",
+                              "ingredient_name_en": "Nuoc cat",
+                              "ingredient_category_id": null,
+                              "ingredient_category_code": null,
+                              "ingredient_category_name": null,
+                              "ingredient_category_parent": null,
+                              "ingredient_category_level": null,
+                              "active": 1,
+                              "is_del": 0
+                            },
+                            "warehouse_id_bhyt": 429,
+                            "price": 28350,
+                            "sum": "8",
+                            "number_morning": 1,
+                            "number_day": 1,
+                            "quantity": 1,
+                            "number_noon": 0,
+                            "number_afternoon": 0,
+                            "number_night": 0,
+                            "last_qtt": 1
+                          }
+                        ],
+                        "warehouse": {
+                          "warehouse_id": 429,
+                          "warehouse_code": "kcc1",
+                          "warehouse_name": "Kho C\u1ea5p C\u1ee9u - T1",
+                          "room_id": "959",
+                          "warehouse_type_id": 438,
+                          "company_id": 1,
+                          "active": 1,
+                          "is_del": 0,
+                          "room": {
+                            "room_id": "959",
+                            "room_alias": "pcct1",
+                            "room_name": "Ph\u00f2ng C\u1ea5p C\u1ee9u - T1",
+                            "branch_id": 1702,
+                            "company_id": 1
+                          }
+                        },
+                        "advice": "",
+                        "examination_prescription_code": "1912170531",
+                        "created_at": 1576599341,
+                        "created_by": "thienht",
+                        "created_by_fullname": "H\u1ee9a Tr\u01b0\u01a1ng Thi\u1ec7n",
+                        "user_signature": "Bs. H\u1ee9a Tr\u01b0\u01a1ng Thi\u1ec7n",
+                        "user_signature_image": null,
+                        "is_print": 1,
+                        "total": 153585
+                      }
+                    ],
+                    "results": {
+                      "chan_doan_so_bo": "Vi\u00eam t\u1ee5y c\u1ea5p",
+                      "huyet_ap1": 120,
+                      "huyet_ap2": 80,
+                      "nhip_tho": 20,
+                      "mach": 120,
+                      "nhiet_do": 37,
+                      "ket_qua_ksk": {
+                        "phan_loai_the_luc": "1",
+                        "tuan_hoan": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_tuan_hoan": "1",
+                        "ho_hap": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_ho_hap": "1",
+                        "tieu_hoa": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_tieu_hoa": "1",
+                        "than_tiet_nieu": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_than_tiet_nieu": "1",
+                        "noi_tiet": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_noi_tiet": "1",
+                        "co_xuong_khop": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_co_xuong_khop": "1",
+                        "than_kinh": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_than_kinh": "1",
+                        "tam_than": "B\u00ecnh th\u01b0\u1eddng",
+                        "phan_loai_tam_than": "1",
+                        "kham_ngoai_khoa": "",
+                        "phan_loai_ngoai_khoa": "",
+                        "kham_san_khoa": "",
+                        "phan_loai_san_khoa": "",
+                        "khong_kinh_mat_phai": "",
+                        "khong_kinh_mat_trai": "",
+                        "co_kinh_mat_phai": "",
+                        "co_kinh_mat_trai": "",
+                        "benh_ve_mat": "",
+                        "phan_loai_kham_mat": "",
+                        "noi_thuong_trai": "",
+                        "noi_tham_trai": "",
+                        "noi_thuong_phai": "",
+                        "noi_tham_phai": "",
+                        "benh_ve_tai": "",
+                        "phan_loai_kham_tai": "",
+                        "ham_tren": "",
+                        "ham_duoi": "",
+                        "benh_ve_rang_ham_mat": "",
+                        "phan_loai_kham_rang_ham_mat": "",
+                        "kham_da_lieu": "",
+                        "phan_loai_da_lieu": "",
+                        "ket_qua_kham_cls": "",
+                        "danh_gia_kham_cls": "",
+                        "phan_loai_suc_khoe": "",
+                        "ket_luan_benh": "",
+                        "loi_dan_ksk": ""
+                      },
+                      "service_category_id": 6,
+                      "service_category_name": "Khám bệnh",
+                      "ly_do_vao_vien": "kh\u00f3 th\u1edf",
+                      "chan_doan": "Vi\u00eam t\u1ee5y c\u1ea5p"
+                    },
+                    "service_id": 88889754,
+                    "used_at": 1576601231
+                  }
+                }
+              ],
+              "total_final_price": 200000,
+              "total_quantity": 0
+            }
+          ],
+          "total_commission_price": 0,
+          "total_final_price": 200000,
+          "total_quantity": 0
+        }
+      ],
+      "total_commission_price": 0,
+      "total_final_price": 200000,
+      "total_quantity": 0
+    },
+    {
+      "_id": {
+        "service_category_parent_id": 4
+      },
+      "data": [
+        {
+          "service_category_id": 4,
+          "exams": [
+            {
+              "current_day_time": 1576602001,
+              "services": [
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacbe"
+                    },
+                    "form_id": 4001,
+                    "service_name": "Ch\u1ee5p Xquang ng\u1ef1c th\u1eb3ng",
+                    "current_day_time": 1576602001,
+                    "service_category_id": 4,
+                    "service_category_name": "C\u0110HA-TDCN",
+                    "service_category_parent_id": 4,
+                    "service_category_parent_name": "Ch\u1ea9n \u0111o\u00e1n h\u00ecnh \u1ea3nh",
+                    "results": {
+                      "note": "",
+                      "diagnosis_content": "<p>- Nhu m\u00f4 hai ph\u1ed5i: m\u1edd 2\/3 d\u01b0\u1edbi ph\u1ed5i (T)<\/p>\n<p>- C\u1ea5u tr\u00fac c\u00e1c r\u1ed1n ph\u1ed5i: B\u00ecnh th\u01b0\u1eddng, kh\u00f4ng m\u1edf r\u1ed9ng, kh\u00f4ng c\u00f3 h\u1ea1ch ph\u00ec \u0111\u1ea1i<\/p>\n<p>- C\u00e1c khoang m\u00e0ng ph\u1ed5i: Tr\u00e0n d\u1ecbch m\u00e0ng ph\u1ed5i (P)<\/p>\n<p>- Hai c\u01a1 ho\u00e0nh: B\u00ecnh th\u01b0\u1eddng<\/p>\n<p>- B\u00f3ng tim: B\u00ecnh th\u01b0\u1eddng<\/p>\n<p>- C\u00e1c m\u1ea1ch m\u00e1u ch\u00ednh: Quai \u0111\u1ed9ng m\u1ea1ch ch\u1ee7 b\u00ecnh th\u01b0\u1eddng.<\/p>\n<p>- Trung th\u1ea5t: Kh\u00f4ng m\u1edf r\u1ed9ng, kh\u00f4ng c\u00f3 h\u1ea1ch ph\u00ec \u0111\u1ea1i<\/p>\n<p>- B\u1ed9 x\u01b0\u01a1ng v\u00e0 m\u00f4 m\u1ec1m ng\u1ef1c: B\u00ecnh th\u01b0\u1eddng<\/p>",
+                      "conclusion": "<p>M\u1edd 2\/3 d\u01b0\u1edbi ph\u1ed5i (T)<\/p>\n<p>Tr\u00e0n d\u1ecbch m\u00e0ng ph\u1ed5i (P) l\u01b0\u1ee3ng \u00edt<\/p>",
+                      "advice": "",
+                      "number_film": "",
+                      "images": [],
+                      "list_images": [],
+                      "used_images": 4,
+                      "images_input": [],
+                      "diagnosis_before": "Vi\u00eam t\u1ee5y c\u1ea5p N3",
+                      "service_category_id": 16,
+                      "service_category_name": "XQuang "
+                    },
+                    "service_id": 88890220,
+                    "used_at": 1576603568
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df90754d67c6653018bbe3c"
+                    },
+                    "form_id": 4003,
+                    "service_name": "Si\u00eau \u00e2m \u1ed5 b\u1ee5ng (gan m\u1eadt, t\u1ee5y, l\u00e1ch, th\u1eadn, b\u00e0ng quang)",
+                    "current_day_time": 1576602001,
+                    "service_category_id": 4,
+                    "service_category_name": "C\u0110HA-TDCN",
+                    "service_category_parent_id": 4,
+                    "service_category_parent_name": "Ch\u1ea9n \u0111o\u00e1n h\u00ecnh \u1ea3nh",
+                    "results": {
+                      "note": "",
+                      "diagnosis_content": "<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">GAN: kh\u00f4ng to, <\/span><\/span><\/span><span style=\"line-height:115%;\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">b\u1edd \u0111\u1ec1u, c\u1ea5u tr\u00fac \u0111\u1ed3ng nh\u1ea5t. Kh\u00f4ng t\u1ed5n th\u01b0\u01a1ng khu tr\u00fa.<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">-T\u00fai m\u1eadt: th\u00e0nh kh\u00f4ng d\u00e0y, kh\u00f4ng s\u1ecfi.<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">-\u0110\u01b0\u1eddng m\u1eadt: trong ngo\u00e0i gan kh\u00f4ng d\u00e3n, kh\u00f4ng s\u1ecfi. <\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">T\u1ee4Y: v\u00f9ng h\u1ea1 v\u1ecb c\u00f3 h\u00ecnh \u1ea3nh th\u00e2m nhi\u1ec5m m\u1ee1 gi\u1eefa c\u00e1c quai ru\u1ed9t, t\u1ee5y kh\u00f3 quan s\u00e1t.\u00a0\u00a0<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"font-family:'Times New Roman', serif;font-style:italic;\">L\u00c1CH: c\u1ea5u tr\u00fac \u0111\u1ed3ng d\u1ea1ng, k\u00edch th\u01b0\u1edbc kh\u00f4ng l\u1edbn.<\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">TH\u1eacN P: k\u00edch th\u01b0\u1edbc trong gi\u1edbi h\u1ea1n, kh\u00f4ng s\u1ecfi, kh\u00f4ng \u1ee9 n\u01b0\u1edbc. <\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">TH\u1eacN T: k\u00edch th\u01b0\u1edbc trong gi\u1edbi h\u1ea1n, kh\u00f4ng s\u1ecfi, kh\u00f4ng \u1ee9 n\u01b0\u1edbc. C\u00f3 nang d#10mm.<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">B\u00c0NG QUANG: th\u00e0nh kh\u00f4ng d\u00e0y, kh\u00f4ng s\u1ecfi.<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">TI\u1ec0N LI\u1ec6T TUY\u1ebeN: kh\u00f4ng to, <\/span><\/span><\/span><span lang=\"vi\" style=\"line-height:115%;\" xml:lang=\"vi\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">nhu m\u00f4 \u0111\u1ec1u<\/span><\/span><\/span><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">.<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\"><span style=\"line-height:115%;\"><span lang=\"nl\" style=\"line-height:115%;\" xml:lang=\"nl\"><span style=\"font-family:'Times New Roman', serif;\"><span style=\"font-weight:normal;\">XOANG B\u1ee4NG: \u00cdt d\u1ecbch quanh gan, v\u00e0 v\u00f9ng h\u1ea1 v\u1ecb m\u1eb7t tr\u01b0\u1edbc b\u00e0ng quang.<\/span><\/span><\/span><\/span><\/p>\n<p style=\"text-align:justify;\">D\u1ecbch m\u00e0ng ph\u1ed5i (P) l\u01b0\u1ee3ng \u00edt<\/p>",
+                      "conclusion": "<p><b>D\u1ecbch \u1ed5 b\u1ee5ng l\u01b0\u1ee3ng \u00edt - trung b\u00ecnh<\/b><\/p>\n<p><b>H\u1ea1n ch\u1ebf kh\u1ea3o s\u00e1t t\u1ee5y<\/b><\/p>\n<p><b>Nang th\u1eadn tr\u00e1i<\/b><\/p>\n<p><b>D\u1ecbch m\u00e0ng ph\u1ed5i (P) l\u01b0\u1ee3ng \u00edt<\/b><\/p>",
+                      "advice": "",
+                      "number_film": "",
+                      "images": [],
+                      "list_images": [
+                        {
+                          "url": "https:\/\/his-filesvr-nih.smarthos.vn\/media-2018\/1\/subclinical\/2019\/12\/17\/5df90754d67c6653018bbe3c\/1576603012_2806.jpg",
+                          "rindex": 0
+                        },
+                        {
+                          "url": "https:\/\/his-filesvr-nih.smarthos.vn\/media-2018\/1\/subclinical\/2019\/12\/17\/5df90754d67c6653018bbe3c\/1576602866_1613.jpg"
+                        },
+                        {
+                          "url": "https:\/\/his-filesvr-nih.smarthos.vn\/media-2018\/1\/subclinical\/2019\/12\/17\/5df90754d67c6653018bbe3c\/1576602866_6440.jpg"
+                        },
+                        {
+                          "url": "https:\/\/his-filesvr-nih.smarthos.vn\/media-2018\/1\/subclinical\/2019\/12\/17\/5df90754d67c6653018bbe3c\/1576602866_9404.jpg"
+                        }
+                      ],
+                      "used_images": 4,
+                      "images_input": [],
+                      "diagnosis_before": "Vi\u00eam t\u1ee5y c\u1ea5p",
+                      "service_category_id": 19,
+                      "service_category_name": "Si\u00eau \u00c2m"
+                    },
+                    "service_id": 7436,
+                    "used_at": 1576603801
+                  }
+                }
+              ],
+              "total_final_price": 362500,
+              "total_quantity": 0
+            },
+            {
+              "current_day_time": 1576515601,
+              "services": [
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacbd"
+                    },
+                    "form_id": 4007,
+                    "service_name": "\u0110o \u0111i\u1ec7n tim",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 4,
+                    "service_category_name": "C\u0110HA-TDCN",
+                    "service_category_parent_id": 4,
+                    "service_category_parent_name": "Th\u0103m D\u00f2 Ch\u1ee9c N\u0103ng",
+                    "results": {
+                      "note": "",
+                      "diagnosis_content": "<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">\u00a0 <\/span><\/span><\/span><\/span><\/p>\n<ul><li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">Test chu\u1ea9n : 1mV = 10 mm, t\u1ed1c \u0111\u1ed9 : 25 mm\/s<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">Nh\u1ecbp : xoang, \u0111\u1ec1u<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">T\u1ea7n s\u1ed1 \u00a0: 120 l\u1ea7n\/ ph\u00fat<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">Tr\u1ee5c QRS : trung gian<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">S\u00f3ng P : b\u00ecnh th\u01b0\u1eddng<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">Kho\u1ea3ng PR : b\u00ecnh th\u01b0\u1eddng<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">QRS : b\u00ecnh th\u01b0\u1eddng<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">ST : b\u00ecnh th\u01b0\u1eddng<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">S\u00f3ng T : b\u00ecnh th\u01b0\u1eddng\u00a0<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">QT\/QTc : b\u00ecnh th\u01b0\u1eddng<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n\t<li>\n\t<p><span style=\"line-height:150%;\"><span style=\"font-size:13pt;\"><span style=\"line-height:150%;\"><span style=\"font-family:'Times New Roman', serif;\">S\u00f3ng U : b\u00ecnh th\u01b0\u1eddng<\/span><\/span><\/span><\/span><\/p>\n\t<\/li>\n<\/ul>",
+                      "conclusion": "<p>Nh\u1ecbp xoang \u0111\u1ec1u, t\u1ea7n s\u1ed1 120 l\u1ea7n\/ph\u00fat.<\/p>",
+                      "advice": "",
+                      "number_film": "",
+                      "images": [],
+                      "list_images": [],
+                      "used_images": 4,
+                      "images_input": [],
+                      "diagnosis_before": "Vi\u00eam t\u1ee5y c\u1ea5p N3",
+                      "service_category_id": 92,
+                      "service_category_name": "\u0110i\u1ec7n Tim"
+                    },
+                    "service_id": 7790,
+                    "used_at": 1576598599
+                  }
+                }
+              ],
+              "total_final_price": 0,
+              "total_quantity": 0
+            }
+          ],
+          "total_commission_price": 0,
+          "total_final_price": 362500,
+          "total_quantity": 0
+        }
+      ],
+      "total_commission_price": 0,
+      "total_final_price": 362500,
+      "total_quantity": 0
+    },
+    {
+      "_id": {
+        "service_category_parent_id": 3
+      },
+      "data": [
+        {
+          "service_category_id": 3,
+          "exams": [
+            {
+              "current_day_time": 1576515601,
+              "services": [
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6d5d67c66c87b8b686b"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110o ho\u1ea1t \u0111\u1ed9 Lipase [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 133,
+                          "lab_indicator_code": "Lipase",
+                          "lab_indicator_name": "Lipase",
+                          "unit_id": 889,
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_group_id": null,
+                          "priority": "0",
+                          "unit_name": "U\/L",
+                          "lab_indicator_min": "8",
+                          "lab_indicator_max": "78",
+                          "lab_indicator_value": "292.4"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7326,
+                    "used_at": 1576597702
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f703d67c66c57b8b6b0f"
+                    },
+                    "form_id": 7,
+                    "service_name": "HSV 1.2 IgM*",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 371,
+                          "lab_indicator_code": "HSVIGM",
+                          "lab_indicator_name": "HSV - 1\/2 IgM",
+                          "unit_id": null,
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_group_id": null,
+                          "priority": "0",
+                          "unit_name": "U\/ml",
+                          "lab_indicator_min": "Neg < 8",
+                          "lab_indicator_max": "Pos >12, GZ 8 - 12 U\/mL",
+                          "lab_indicator_value": "NEG 0.500"
+                        }
+                      ],
+                      "service_category_id": 458,
+                      "service_category_name": "K\u00fd sinh tr\u00f9ng",
+                      "notes": "",
+                      "diagnosis": "",
+                      "parameter_info": {
+                        "analyzer_id": 52,
+                        "from_age": 0,
+                        "to_age": 100,
+                        "sex": 1,
+                        "service_parameter_name": "liaisonlxnih_8439_1_0_100"
+                      }
+                    },
+                    "service_id": 8439,
+                    "used_at": 1576597793
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacbf"
+                    },
+                    "form_id": 7,
+                    "service_name": "T\u1ed5ng ph\u00e2n t\u00edch t\u1ebf b\u00e0o m\u00e1u ngo\u1ea1i vi (b\u1eb1ng m\u00e1y \u0111\u1ebfm laser)",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 1,
+                          "lab_indicator_code": "WBC (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u)",
+                          "lab_indicator_name": "WBC (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u)",
+                          "lab_indicator_value": "13.3",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "4",
+                          "lab_indicator_max": "10",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 16,
+                          "lab_indicator_code": "NEUT% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u trung t\u00ednh)",
+                          "lab_indicator_name": "NEUT% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u trung t\u00ednh)",
+                          "lab_indicator_value": "90.0",
+                          "service_id": 31405,
+                          "unit_id": 873,
+                          "unit_name": "%",
+                          "lab_indicator_min": "45",
+                          "lab_indicator_max": "75",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 2,
+                          "lab_indicator_code": "NEUT (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u trung t\u00ednh)",
+                          "lab_indicator_name": "NEUT (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u trung t\u00ednh)",
+                          "lab_indicator_value": "12.0",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "1.7",
+                          "lab_indicator_max": "7.0",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 17,
+                          "lab_indicator_code": "LYMPH% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u lympho)",
+                          "lab_indicator_name": "LYMPH% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u lympho)",
+                          "lab_indicator_value": "5.8",
+                          "service_id": 31405,
+                          "unit_id": 873,
+                          "unit_name": "%",
+                          "lab_indicator_min": "19",
+                          "lab_indicator_max": "48",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 3,
+                          "lab_indicator_code": "LYMPH (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u lympho)",
+                          "lab_indicator_name": "LYMPH (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u lympho)",
+                          "lab_indicator_value": "0.8",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "1.0",
+                          "lab_indicator_max": "4.0",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 18,
+                          "lab_indicator_code": "MONO% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u mono)",
+                          "lab_indicator_name": "MONO% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u mono)",
+                          "lab_indicator_value": "2.2",
+                          "service_id": 31405,
+                          "unit_id": 873,
+                          "unit_name": "%",
+                          "lab_indicator_min": "3",
+                          "lab_indicator_max": "9",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 4,
+                          "lab_indicator_code": "MONO (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u mono)",
+                          "lab_indicator_name": "MONO (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u mono)",
+                          "lab_indicator_value": "0.3",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "0.1",
+                          "lab_indicator_max": "1.0",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 19,
+                          "lab_indicator_code": "EO% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u \u01b0a axit)",
+                          "lab_indicator_name": "EO% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u \u01b0a axit)",
+                          "lab_indicator_value": "1.8",
+                          "service_id": 31405,
+                          "unit_id": 873,
+                          "unit_name": "%",
+                          "lab_indicator_min": "0",
+                          "lab_indicator_max": "7",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 5,
+                          "lab_indicator_code": "EO (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u \u01b0a axit)",
+                          "lab_indicator_name": "EO (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u \u01b0a axit)",
+                          "lab_indicator_value": "0.2",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "0",
+                          "lab_indicator_max": "0.5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 20,
+                          "lab_indicator_code": "BASO% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u \u01b0a base)",
+                          "lab_indicator_name": "BASO% (T\u1ef7 l\u1ec7 % b\u1ea1ch c\u1ea7u \u01b0a base)",
+                          "lab_indicator_value": "0.2",
+                          "service_id": 31405,
+                          "unit_id": 873,
+                          "unit_name": "%",
+                          "lab_indicator_min": "0",
+                          "lab_indicator_max": "1.5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 6,
+                          "lab_indicator_code": "BASO (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u \u01b0a base)",
+                          "lab_indicator_name": "BASO (S\u1ed1 l\u01b0\u1ee3ng b\u1ea1ch c\u1ea7u \u01b0a base)",
+                          "lab_indicator_value": "0.0",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "0",
+                          "lab_indicator_max": "0.2",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 7,
+                          "lab_indicator_code": "RBC (S\u1ed1 l\u01b0\u1ee3ng h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_name": "RBC (S\u1ed1 l\u01b0\u1ee3ng h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_value": "4.49",
+                          "service_id": 31405,
+                          "unit_id": 1001,
+                          "unit_name": "10^6\/\u00b5L",
+                          "lab_indicator_min": "3.8",
+                          "lab_indicator_max": "5.6",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 8,
+                          "lab_indicator_code": "HGB (L\u01b0\u1ee3ng huy\u1ebft s\u1eafc t\u1ed1 - Hemoglobine)",
+                          "lab_indicator_name": "HGB (L\u01b0\u1ee3ng huy\u1ebft s\u1eafc t\u1ed1 - Hemoglobine)",
+                          "lab_indicator_value": "14.5",
+                          "service_id": 31405,
+                          "unit_id": 1001,
+                          "unit_name": "10^6\/\u00b5L",
+                          "lab_indicator_min": "12",
+                          "lab_indicator_max": "18",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 123,
+                          "lab_indicator_code": "HCT (Kh\u1ed1i h\u1ed3ng c\u1ea7u - Hematocrit)",
+                          "lab_indicator_name": "HCT (Kh\u1ed1i h\u1ed3ng c\u1ea7u - Hematocrit)",
+                          "lab_indicator_value": "43.7",
+                          "service_id": 31405,
+                          "unit_id": 947,
+                          "unit_name": "%",
+                          "lab_indicator_min": "35",
+                          "lab_indicator_max": "52",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 10,
+                          "lab_indicator_code": "MCV (Th\u1ec3 t\u00edch trung b\u00ecnh c\u1ee7a m\u1ed9t h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_name": "MCV (Th\u1ec3 t\u00edch trung b\u00ecnh c\u1ee7a m\u1ed9t h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_value": "97.3",
+                          "service_id": 31405,
+                          "unit_id": 945,
+                          "unit_name": "fL",
+                          "lab_indicator_min": "80",
+                          "lab_indicator_max": "97",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 11,
+                          "lab_indicator_code": "MCH (L\u01b0\u1ee3ng Hemoglobin trung b\u00ecnh h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_name": "MCH (L\u01b0\u1ee3ng Hemoglobin trung b\u00ecnh h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_value": "32.3",
+                          "service_id": 31405,
+                          "unit_id": 946,
+                          "unit_name": "pg",
+                          "lab_indicator_min": "26",
+                          "lab_indicator_max": "32",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 12,
+                          "lab_indicator_code": "MCHC (N\u1ed3ng \u0111\u1ed9 Hemoglobin trung b\u00ecnh h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_name": "MCHC (N\u1ed3ng \u0111\u1ed9 Hemoglobin trung b\u00ecnh h\u1ed3ng c\u1ea7u)",
+                          "lab_indicator_value": "33.2",
+                          "service_id": 31405,
+                          "unit_id": 1002,
+                          "unit_name": "g\/dL",
+                          "lab_indicator_min": "31",
+                          "lab_indicator_max": "36",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 13,
+                          "lab_indicator_code": "RDW-CV (\u0110\u1ed9 ph\u00e2n b\u1ed1 h\u1ed3ng c\u1ea7u - CV)",
+                          "lab_indicator_name": "RDW-CV (\u0110\u1ed9 ph\u00e2n b\u1ed1 h\u1ed3ng c\u1ea7u - CV)",
+                          "lab_indicator_value": "14.3",
+                          "service_id": 31405,
+                          "unit_id": 873,
+                          "unit_name": "%",
+                          "lab_indicator_min": "11",
+                          "lab_indicator_max": "15.7",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 14,
+                          "lab_indicator_code": "PLT (S\u1ed1 l\u01b0\u1ee3ng ti\u1ec3u c\u1ea7u)",
+                          "lab_indicator_name": "PLT (S\u1ed1 l\u01b0\u1ee3ng ti\u1ec3u c\u1ea7u)",
+                          "lab_indicator_value": "173",
+                          "service_id": 31405,
+                          "unit_id": 1000,
+                          "unit_name": "10^3\/\u00b5L",
+                          "lab_indicator_min": "150",
+                          "lab_indicator_max": "400",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 15,
+                          "lab_indicator_code": "MPV",
+                          "lab_indicator_name": "MPV",
+                          "lab_indicator_value": "8.0",
+                          "service_id": 31405,
+                          "unit_id": 945,
+                          "unit_name": "fL",
+                          "lab_indicator_min": "6.3",
+                          "lab_indicator_max": "12",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 45,
+                          "analyzer_code": "dxh600nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 11,
+                      "service_category_name": "XN Huy\u1ebft H\u1ecdc",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 31405,
+                    "used_at": 1576600775
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc3"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh nh\u00f3m m\u00e1u h\u1ec7 ABO, Rh(D) (K\u1ef9 thu\u1eadt Scangel\/Gelcard tr\u00ean m\u00e1y b\u00e1n t\u1ef1 \u0111\u1ed9ng)",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 335,
+                          "lab_indicator_code": "ABO",
+                          "lab_indicator_name": "ABO",
+                          "lab_indicator_value": "B",
+                          "service_id": 31403,
+                          "unit_id": "-",
+                          "unit_name": "",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 51,
+                          "analyzer_code": "dianagrifolsnih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 337,
+                          "lab_indicator_code": "Rh",
+                          "lab_indicator_name": "Rh",
+                          "lab_indicator_value": "Pos",
+                          "service_id": 31403,
+                          "unit_id": "-",
+                          "unit_name": "",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 51,
+                          "analyzer_code": "dianagrifolsnih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 11,
+                      "service_category_name": "XN Huy\u1ebft H\u1ecdc",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 31403,
+                    "used_at": 1576600776
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc1"
+                    },
+                    "form_id": 7,
+                    "service_name": "Th\u1eddi gian thromboplastin m\u1ed9t ph\u1ea7n ho\u1ea1t ho\u00e1 (APTT: Activated Partial Thromboplastin Time), (T\u00ean kh\u00e1c: TCK) b\u1eb1ng m\u00e1y t\u1ef1 \u0111\u1ed9ng",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 94,
+                          "lab_indicator_code": "APTT(TCA,TCK)",
+                          "lab_indicator_name": "APTT(TCA,TCK)",
+                          "lab_indicator_value": "38.1",
+                          "service_id": 7594,
+                          "unit_id": 953,
+                          "unit_name": "s",
+                          "lab_indicator_min": "25",
+                          "lab_indicator_max": "40",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 46,
+                          "analyzer_code": "acltop350nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 457,
+                      "service_category_name": "\u0110\u00f4ng M\u00e1u",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7594,
+                    "used_at": 1576600778
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc2"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh l\u01b0\u1ee3ng Fibrinogen (T\u00ean kh\u00e1c: \u0110\u1ecbnh l\u01b0\u1ee3ng y\u1ebfu t\u1ed1 I), ph\u01b0\u01a1ng ph\u00e1p gi\u00e1n ti\u1ebfp, b\u1eb1ng m\u00e1y b\u00e1n t\u1ef1 \u0111\u1ed9ng",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 122,
+                          "lab_indicator_code": "Fibrinogen",
+                          "lab_indicator_name": "Fibrinogen",
+                          "lab_indicator_value": "6.34",
+                          "service_id": 7600,
+                          "unit_id": 943,
+                          "unit_name": "g\/L",
+                          "lab_indicator_min": "2",
+                          "lab_indicator_max": "4",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 46,
+                          "analyzer_code": "acltop350nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 457,
+                      "service_category_name": "\u0110\u00f4ng M\u00e1u",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7600,
+                    "used_at": 1576600781
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc0"
+                    },
+                    "form_id": 7,
+                    "service_name": "Th\u1eddi gian prothrombin (PT: Prothrombin Time), (C\u00e1c t\u00ean kh\u00e1c: TQ, T\u1ef7 l\u1ec7 Prothrombin) b\u1eb1ng m\u00e1y t\u1ef1 \u0111\u1ed9ng",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 120,
+                          "lab_indicator_code": "Th\u1eddi gian quick",
+                          "lab_indicator_name": "Th\u1eddi gian quick",
+                          "lab_indicator_value": "19.2",
+                          "service_id": 7608,
+                          "unit_id": 953,
+                          "unit_name": "s",
+                          "lab_indicator_min": "10",
+                          "lab_indicator_max": "13",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 46,
+                          "analyzer_code": "acltop350nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 561,
+                          "lab_indicator_code": "Prothrombin (PT%)",
+                          "lab_indicator_name": "Prothrombin (PT%)",
+                          "lab_indicator_value": "50",
+                          "service_id": 7608,
+                          "unit_id": 947,
+                          "unit_name": "%",
+                          "lab_indicator_min": "> 70",
+                          "lab_indicator_max": "",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 46,
+                          "analyzer_code": "acltop350nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 457,
+                      "service_category_name": "\u0110\u00f4ng M\u00e1u",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7608,
+                    "used_at": 1576600785
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798baccc"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110o ho\u1ea1t \u0111\u1ed9 AST (GOT) [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 156,
+                          "lab_indicator_code": "AST (GOT)",
+                          "lab_indicator_name": "AST (GOT)",
+                          "lab_indicator_value": "52",
+                          "service_id": 88890002,
+                          "unit_id": 917,
+                          "unit_name": "U\/L",
+                          "lab_indicator_min": "5",
+                          "lab_indicator_max": "50",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 88890002,
+                    "used_at": 1576600790
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6ded67c668b728bb6d5"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110o ho\u1ea1t \u0111\u1ed9 Amylase [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 569,
+                          "lab_indicator_code": "Amylase",
+                          "lab_indicator_name": "Amylase",
+                          "lab_indicator_value": "187.8",
+                          "service_id": 88890022,
+                          "unit_id": 917,
+                          "unit_name": "U\/L",
+                          "lab_indicator_min": "15",
+                          "lab_indicator_max": "85",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 88890022,
+                    "used_at": 1576600796
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798baccd"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110i\u1ec7n gi\u1ea3i \u0111\u1ed3 (Na, K, Cl) [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 36,
+                          "lab_indicator_code": "Na+",
+                          "lab_indicator_name": "Na+",
+                          "lab_indicator_value": "140.1",
+                          "service_id": 8712,
+                          "unit_id": 886,
+                          "unit_name": "mmol\/L",
+                          "lab_indicator_min": "135",
+                          "lab_indicator_max": "145",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 48,
+                          "analyzer_code": "ise5000nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 148,
+                          "lab_indicator_code": "K+",
+                          "lab_indicator_name": "K+",
+                          "lab_indicator_value": "4.39",
+                          "service_id": 8712,
+                          "unit_id": 886,
+                          "unit_name": "mmol\/L",
+                          "lab_indicator_min": "3.5",
+                          "lab_indicator_max": "5.2",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 48,
+                          "analyzer_code": "ise5000nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 346,
+                          "lab_indicator_code": "Ca ++",
+                          "lab_indicator_name": "Ca ++",
+                          "lab_indicator_value": "1.47",
+                          "service_id": 8712,
+                          "unit_id": 886,
+                          "unit_name": "mmol\/L",
+                          "lab_indicator_min": "1.1",
+                          "lab_indicator_max": "1.5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 48,
+                          "analyzer_code": "ise5000nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 518,
+                          "lab_indicator_code": "CL-",
+                          "lab_indicator_name": "CL-",
+                          "lab_indicator_value": "105.1",
+                          "service_id": 8712,
+                          "unit_id": 886,
+                          "unit_name": "mmol\/L",
+                          "lab_indicator_min": "98",
+                          "lab_indicator_max": "108",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 48,
+                          "analyzer_code": "ise5000nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 8712,
+                    "used_at": 1576600803
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc8"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh l\u01b0\u1ee3ng Glucose",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 149,
+                          "lab_indicator_code": "Glucose",
+                          "lab_indicator_name": "Glucose",
+                          "lab_indicator_value": "5.9",
+                          "service_id": 7699,
+                          "unit_id": 886,
+                          "unit_name": "mmol\/L",
+                          "lab_indicator_min": "3.9",
+                          "lab_indicator_max": "6.4",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7699,
+                    "used_at": 1576600811
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798baccb"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110o ho\u1ea1t \u0111\u1ed9 ALT (GPT) [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 157,
+                          "lab_indicator_code": "ALT (GPT)",
+                          "lab_indicator_name": "ALT (GPT)",
+                          "lab_indicator_value": "69",
+                          "service_id": 88890001,
+                          "unit_id": 917,
+                          "unit_name": "U\/L",
+                          "lab_indicator_min": "5",
+                          "lab_indicator_max": "50",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 88890001,
+                    "used_at": 1576600820
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f9aed67c6619728bc5d1"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh l\u01b0\u1ee3ng CRP hs (C-Reactive Protein high sesitivity) [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 564,
+                          "lab_indicator_code": "CRPhs (\u0111\u1ecbnh l\u01b0\u1ee3ng)",
+                          "lab_indicator_name": "CRPhs (\u0111\u1ecbnh l\u01b0\u1ee3ng)",
+                          "lab_indicator_value": "287.18",
+                          "service_id": 88890031,
+                          "unit_id": 918,
+                          "unit_name": "mg\/l",
+                          "lab_indicator_min": "0",
+                          "lab_indicator_max": "5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 88890031,
+                    "used_at": 1576600830
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc9"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh l\u01b0\u1ee3ng Ur\u00ea m\u00e1u",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 366,
+                          "lab_indicator_code": "Urea",
+                          "lab_indicator_name": "Urea",
+                          "lab_indicator_value": "7",
+                          "service_id": 7298,
+                          "unit_id": 886,
+                          "unit_name": "mmol\/L",
+                          "lab_indicator_min": "2.5",
+                          "lab_indicator_max": "7.5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7298,
+                    "used_at": 1576600841
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacca"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh l\u01b0\u1ee3ng Creatinin (m\u00e1u)",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 311,
+                          "lab_indicator_code": "Creatinine",
+                          "lab_indicator_name": "Creatinine",
+                          "lab_indicator_value": "92",
+                          "service_id": 7697,
+                          "unit_id": 995,
+                          "unit_name": "\u00b5mol\/L",
+                          "lab_indicator_min": "45",
+                          "lab_indicator_max": "120",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 47,
+                          "analyzer_code": "au680nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 12,
+                      "service_category_name": "XN Sinh H\u00f3a",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7697,
+                    "used_at": 1576600853
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc6"
+                    },
+                    "form_id": 7,
+                    "service_name": "HBsAg test nhanh",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 731,
+                          "lab_indicator_code": "HBSAG TEST NHANH",
+                          "lab_indicator_name": "HBsAg test nhanh",
+                          "unit_id": null,
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_group_id": null,
+                          "priority": "99999",
+                          "unit_name": "",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "Negative",
+                          "lab_indicator_value": "Negative"
+                        }
+                      ],
+                      "service_category_id": 444,
+                      "service_category_name": "Test nhanh",
+                      "notes": "",
+                      "diagnosis": "",
+                      "parameter_info": {
+                        "analyzer_id": 53,
+                        "from_age": 0,
+                        "to_age": 100,
+                        "sex": 1,
+                        "service_parameter_name": "TN_88890078_1_0_100"
+                      }
+                    },
+                    "service_id": 88890078,
+                    "used_at": 1576600866
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc7"
+                    },
+                    "form_id": 7,
+                    "service_name": "Anti HCV (test nhanh)*",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 626,
+                          "lab_indicator_code": "ANTI HCV (TEST NHANH)",
+                          "lab_indicator_name": "Anti HCV (test nhanh)",
+                          "unit_id": null,
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_group_id": null,
+                          "priority": "99999",
+                          "unit_name": "",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "Negative",
+                          "lab_indicator_value": "Negative"
+                        }
+                      ],
+                      "service_category_id": 444,
+                      "service_category_name": "Test nhanh",
+                      "notes": "",
+                      "diagnosis": "",
+                      "parameter_info": {
+                        "analyzer_id": 53,
+                        "from_age": 0,
+                        "to_age": 100,
+                        "sex": 1,
+                        "service_parameter_name": "TN_7659_1_0_100"
+                      }
+                    },
+                    "service_id": 7659,
+                    "used_at": 1576600880
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc5"
+                    },
+                    "form_id": 7,
+                    "service_name": "HIV Ab test nhanh",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 625,
+                          "lab_indicator_code": "HIV (TEST NHANH)",
+                          "lab_indicator_name": "HIV (test nhanh)",
+                          "unit_id": null,
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_group_id": null,
+                          "priority": "99999",
+                          "unit_name": "",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "Negative",
+                          "lab_indicator_value": "Negative"
+                        }
+                      ],
+                      "service_category_id": 444,
+                      "service_category_name": "Test nhanh",
+                      "notes": "",
+                      "diagnosis": "",
+                      "parameter_info": {
+                        "analyzer_id": 53,
+                        "from_age": 0,
+                        "to_age": 100,
+                        "sex": 1,
+                        "service_parameter_name": "TN_88888911_1_0_100"
+                      }
+                    },
+                    "service_id": 88888911,
+                    "used_at": 1576600895
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f9c8d67c6671148b879d"
+                    },
+                    "form_id": 7,
+                    "service_name": "\u0110\u1ecbnh l\u01b0\u1ee3ng Pro-calcitonin [M\u00e1u]",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 363,
+                          "lab_indicator_code": "Procalcitonin",
+                          "lab_indicator_name": "Procalcitonin",
+                          "lab_indicator_value": "36.7",
+                          "service_id": 7340,
+                          "unit_id": 919,
+                          "unit_name": "ng\/ml",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 0.1",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 52,
+                          "analyzer_code": "liaisonlxnih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 113,
+                      "service_category_name": "XN Mi\u1ec5n D\u1ecbch",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7340,
+                    "used_at": 1576600911
+                  }
+                },
+                {
+                  "services": {
+                    "_id": {
+                      "$id": "5df8f6c1d67c663f798bacc4"
+                    },
+                    "form_id": 7,
+                    "service_name": "T\u1ed5ng ph\u00e2n t\u00edch n\u01b0\u1edbc ti\u1ec3u (B\u1eb1ng m\u00e1y t\u1ef1 \u0111\u1ed9ng)",
+                    "current_day_time": 1576515601,
+                    "service_category_id": 3,
+                    "service_category_name": "XN",
+                    "service_category_parent_id": 3,
+                    "service_category_parent_name": "X\u00e9t nghi\u1ec7m",
+                    "results": {
+                      "parameters": [
+                        {
+                          "lab_indicator_id": 61,
+                          "lab_indicator_code": "LEU",
+                          "lab_indicator_name": "LEU",
+                          "lab_indicator_value": "neg",
+                          "service_id": 7349,
+                          "unit_id": 1006,
+                          "unit_name": "Leu\/\u00b5L",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 25",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 62,
+                          "lab_indicator_code": "NIT",
+                          "lab_indicator_name": "NIT",
+                          "lab_indicator_value": "neg",
+                          "service_id": 7349,
+                          "unit_id": "-",
+                          "unit_name": "",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "Neg",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 63,
+                          "lab_indicator_code": "URO",
+                          "lab_indicator_name": "URO",
+                          "lab_indicator_value": "2",
+                          "service_id": 7349,
+                          "unit_id": 925,
+                          "unit_name": "mg\/dl",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 1",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 64,
+                          "lab_indicator_code": "PRO",
+                          "lab_indicator_name": "PRO",
+                          "lab_indicator_value": "15",
+                          "service_id": 7349,
+                          "unit_id": 925,
+                          "unit_name": "mg\/dl",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 15",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 65,
+                          "lab_indicator_code": "pH",
+                          "lab_indicator_name": "pH",
+                          "lab_indicator_value": "5",
+                          "service_id": 7349,
+                          "unit_id": "-",
+                          "unit_name": "",
+                          "lab_indicator_min": "5.0",
+                          "lab_indicator_max": "8.0",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 67,
+                          "lab_indicator_code": "SG",
+                          "lab_indicator_name": "SG",
+                          "lab_indicator_value": "1.035",
+                          "service_id": 7349,
+                          "unit_id": "-",
+                          "unit_name": "",
+                          "lab_indicator_min": "1.010",
+                          "lab_indicator_max": "1.025",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 68,
+                          "lab_indicator_code": "KET",
+                          "lab_indicator_name": "KET",
+                          "lab_indicator_value": "15",
+                          "service_id": 7349,
+                          "unit_id": 925,
+                          "unit_name": "mg\/dl",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 69,
+                          "lab_indicator_code": "BIL",
+                          "lab_indicator_name": "BIL",
+                          "lab_indicator_value": "0.5",
+                          "service_id": 7349,
+                          "unit_id": 925,
+                          "unit_name": "mg\/dl",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 0.5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 70,
+                          "lab_indicator_code": "GLU",
+                          "lab_indicator_name": "GLU",
+                          "lab_indicator_value": "norm",
+                          "service_id": 7349,
+                          "unit_id": 925,
+                          "unit_name": "mg\/dl",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 25",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        },
+                        {
+                          "lab_indicator_id": 568,
+                          "lab_indicator_code": "Ery",
+                          "lab_indicator_name": "Ery",
+                          "lab_indicator_value": "300",
+                          "service_id": 7349,
+                          "unit_id": 1005,
+                          "unit_name": "Ery\/\u00b5L",
+                          "lab_indicator_min": "",
+                          "lab_indicator_max": "< 5",
+                          "age": 56,
+                          "sex": 1,
+                          "analyzer_id": 49,
+                          "analyzer_code": "labureaderplus2nih",
+                          "lab_indicator_category_id": null,
+                          "lab_indicator_category_name": null,
+                          "lab_indicator_group_id": "-",
+                          "lab_indicator_group_name": "-"
+                        }
+                      ],
+                      "service_category_id": 114,
+                      "service_category_name": "XN N\u01b0\u1edbc Ti\u1ec3u",
+                      "notes": "",
+                      "diagnosis": ""
+                    },
+                    "service_id": 7349,
+                    "used_at": 1576600928
+                  }
+                }
+              ],
+              "total_final_price": 1437500,
+              "total_quantity": 0
+            }
+          ],
+          "total_commission_price": 0,
+          "total_final_price": 1437500,
+          "total_quantity": 0
+        }
+      ],
+      "total_commission_price": 0,
+      "total_final_price": 1437500,
+      "total_quantity": 0
+    }
+  ]
+}

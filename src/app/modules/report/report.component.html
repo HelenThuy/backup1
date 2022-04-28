@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Hệ thống báo cáo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div  class="container"
+              fxLayout
+              fxLayout.xs="column"
+              fxLayoutAlign="left"
+              fxLayoutGap="0"
+              fxLayoutGap.xs="0">
+            <div fxFlex="60%">
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let report of reports">
+                        <mat-radio-button color="primary" [value]="report" (change)="selectedReport($event.value)">
+                            {{report.report_name}}
+                        </mat-radio-button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div fxFlex="40%">
+                <div *ngIf="controls">
+                    <div *ngFor="let control of controls; let i = index;" >
+                        <mat-form-field *ngIf="control.description == 'type|Date|Min' || control.description == 'type|Date|Max';else other_content" class="margin-input">
+                            <input matInput [(ngModel)]="setting[i]" [ngxMatDatetimePicker]="picker" (focus)="picker.open()" (click)="picker.open()" placeholder="{{control.label}}" autocomplete="off">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+                        </mat-form-field>
+
+                        <ng-template #other_content>
+                            <div *ngIf="control.control_type == 'text'">
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="setting[i]" placeholder="{{control.label}}" autocomplete="off">
+                                </mat-form-field>
+                            </div>
+
+                            <div *ngIf="control.control_type == 'select'">
+                                <mat-form-field>
+                                    <mat-select [(ngModel)]="setting[i]" #singleSelect placeholder="{{control.label}}" required>
+                                        <ngx-mat-select-search placeholderLabel="Tìm kiếm" (input)="searchData($event.target.value, i)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+                                        <mat-option *ngFor="let item of control.data" [value]="(item._id)?item._id:item">{{item[control.id+"_name"] }}</mat-option>
+                                    </mat-select>
+
+<!--                                    <mat-select [(ngModel)]="setting[i]" #singleSelect placeholder="{{control.label}}" >-->
+<!--                                        <mat-option *ngFor="let item of control.data" [value]="(item._id)?item._id:item">{{item[control.id+"_name"] }}</mat-option>-->
+<!--                                    </mat-select>-->
+                                </mat-form-field>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <mat-card-actions class="align-right">
+                        <button mat-raised-button color="yellow" class="btn-block" type="submit" (click)="open('xlsx')" >Excel</button>
+                        <button mat-raised-button color="primary" class="btn-block" type="submit" (click)="open('pdf')" >Xem PDF</button>
+                    </mat-card-actions>
+                </div>
+
+
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,124 @@
+<!--<mat-card>-->
+<!--    <mat-card-header>-->
+<!--        <mat-card-title>Hồ sơ của bạn</mat-card-title>-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content>-->
+<!--        <mat-list-item class="mat-list-deal" *ngFor="let profile of currentProfile;">-->
+<!--            <a >-->
+<!--            <img mat-list-avatar class="deal-card" src="assets/images/face2.jpg" alt="Desc 1">-->
+<!--            <p mat-line style="text-align: center;"><b>{{profile.patient_fullname}}</b></p>-->
+<!--            <p mat-line class="m-line"><b>Ngày sinh: </b>{{profile.birthday | unixToDate}}</p>-->
+<!--            <p mat-line class="m-line"><b>Số điện thoại: </b> {{profile.phone_number}}</p>-->
+<!--            <p *ngIf="profile.sex == 1" mat-line class="m-line"><b>Giới tính: </b> Nam</p>-->
+<!--            <p *ngIf="profile.sex == 2" mat-line class="m-line"><b>Giới tính: </b> Nữ</p>-->
+<!--            <p mat-line class="m-line"><b>Mã y tế: </b>{{ (profile.patient_id) ? profile.patient_id : 'chưa có'}}</p>-->
+<!--            </a>-->
+<!--        </mat-list-item>-->
+<!--    </mat-card-content>-->
+<!--    <mat-card-footer style="margin: 0;">-->
+<!--        <mat-card-actions>-->
+<!--            <button mat-raised-button color="primary" [routerLink]="['/profile/add-profile']">Thêm mới hồ sơ</button>-->
+<!--        </mat-card-actions>-->
+<!--    </mat-card-footer>-->
+<!--</mat-card>-->
+<!--<router-outlet></router-outlet>-->
+
+<div *ngIf="show_list">
+    <div fxFlex fxFlexAlign="start">
+        <div fxLayout="row wrap" fxLayout.xs="column wrap" >
+            <mat-card fxFlex.xs="30" fxFlex="30" class="example-card" *ngFor="let profile of currentProfile;" (click)="goEdit(profile)">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"
+                         [ngStyle]="{background: (profile.sex == 1) ? 'url(/assets/images/avt_male.png)' : 'url(/assets/images/avt_female.png)'}"></div>
+                    <mat-card-title>{{profile.patient_fullname}}</mat-card-title>
+                    <mat-card-subtitle>Giới tính: {{ (profile.sex == 1) ? 'Nam' : 'Nữ'}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content style="padding-top: 0;">
+                    <p mat-line class="m-line"><b>Ngày sinh: </b>{{profile.birthday | unixToDate}}</p>
+                    <p mat-line class="m-line"><b>Số điện thoại: </b> {{profile.phone_number}}</p>
+                    <p mat-line class="m-line"><b>Mã y tế: </b>{{ (profile.patient_id) ? profile.patient_id : 'chưa có'}}</p>
+                </mat-card-content>
+            </mat-card>
+
+<!--            <div class="footer-profile">-->
+            <mat-card-actions style="margin-left: 5px;" fxFlex.xs="100" fxFlex="100">
+                <button mat-raised-button color="primary" [routerLink]="['/profile/add-profile']">Thêm mới hồ sơ</button>
+            </mat-card-actions>
+        </div>
+    </div>
+
+
+</div>
+
+<div *ngIf="show_form">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Thêm mới hồ sơ</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="editProfileFom" novalidate (ngSubmit)="editProfile()">
+                <mat-form-field style="width: 100%">
+                    <mat-select placeholder="Chọn bệnh viện" [compareWith]="compareObjects" formControlName="hospital">
+                        <mat-option *ngFor="let hospital of companies"
+                                    [value]="hospital">{{hospital.company_name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field style="width: 100%">
+                    <input matInput placeholder="Họ và tên bệnh nhân" formControlName="patient">
+                </mat-form-field>
+
+                <div class="mb-1">
+                    <mat-form-field style="width: 100%">
+                        <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Ngày sinh"
+                               formControlName="birthday" >
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-error>
+                        <span *ngIf="!editProfileFom.get('birthday').valid && editProfileFom.get('birthday').touched">Vui lòng nhập ngày sinh !</span>
+                    </mat-error>
+                </div>
+                <div class="mb-1">
+                    <label>Giới tính</label>
+                    <mat-radio-group formControlName="gender" required>
+                        <mat-radio-button [value]="1">Nam</mat-radio-button>
+                        <mat-radio-button [value]="2">Nữ</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-error>
+                        <span *ngIf="!editProfileFom.get('gender').valid && editProfileFom.get('gender').touched">Vui lòng nhập giới !</span>
+                    </mat-error>
+                </div>
+                <div class="mb-1">
+                    <mat-form-field style="width: 100%">
+                        <input matInput placeholder="Số điện thoại (0123456789)" type="text" formControlName="phoneNumber"
+                               required>
+                    </mat-form-field>
+                    <mat-error>
+                        <span *ngIf="!editProfileFom.get('phoneNumber').valid && editProfileFom.get('phoneNumber').touched">Vui lòng nhập đúng số điện thoại !</span>
+                    </mat-error>
+                </div>
+                <div class="mb-1">
+                    <mat-form-field style="width: 100%">
+                        <input matInput placeholder="Địa chỉ" type="text" formControlName="address">
+                    </mat-form-field>
+                </div>
+                <mat-form-field style="width: 100%">
+                    <input matInput placeholder="Mã y tế" formControlName="patientID">
+                </mat-form-field>
+                <mat-form-field style="width: 100%">
+                    <textarea matInput placeholder="Tiểu sử bệnh" formControlName="medicalHistory"></textarea>
+                </mat-form-field>
+                <mat-form-field style="width: 100%">
+                    <textarea matInput placeholder="Dị ứng" formControlName="allergy"></textarea>
+                </mat-form-field>
+                <mat-card-actions>
+                    <button mat-raised-button color="cancel" class="btn-block" type="button" (click)="cancel()">Hủy</button>
+                    <button mat-raised-button color="primary" class="btn-block" type="submit">Cập nhật</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<router-outlet></router-outlet>

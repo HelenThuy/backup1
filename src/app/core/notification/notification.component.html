@@ -1,0 +1,68 @@
+<mat-tab-group [selectedIndex]="1" mat-stretch-tabs>
+    <mat-tab id="tab-noti">
+        <ng-template matTabLabel>Notifications</ng-template>
+        <div >
+            <mat-nav-list infiniteScroll
+                          [infiniteScrollDistance]="2"
+                          [infiniteScrollThrottle]="50"
+                          [infiniteScrollContainer]="selector"
+                          [fromRoot]="true"
+                          (scrolled)="onScroll()">
+                <mat-list-item *ngFor="let noti of data" (click)="readNoti(noti);" [ngClass]="{noti_false: (noti.read == false)}">
+                    <mat-icon mat-list-avatar>notifications_active</mat-icon>
+                    <h4 matLine >{{noti.title}}</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ noti.created_at | unixToTimeAgo }}</span>
+                </mat-list-item>
+
+                <!--
+                <mat-list-item>
+                    <mat-icon mat-list-avatar class="mat-text-primary">check_circle</mat-icon>
+                    <h4 matLine>Social</h4>
+                    <p matLine>Ligula Purus Adipiscing</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar class="mat-text-warn">local_offer</mat-icon>
+                    <h4 matLine>Promotions</h4>
+                    <p matLine>Etiam Ligula Dapibus</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar class="mat-text-accent">info</mat-icon>
+                    <h4 matLine>Updates</h4>
+                    <p matLine>Sollicitudin Euismod Fringilla</p>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon mat-list-avatar class="mat-indigo">delete_sweep</mat-icon>
+                    <h4 matLine>Removed 6 items from task list</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ 1427207139000 | date: 'fullDate' }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar>check_circle</mat-icon>
+                    <h4 matLine>Completed 2 projects</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ 1427412725000 | date: 'fullDate' }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar>notifications_paused</mat-icon>
+                    <h4 matLine>Muted notifications</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ 1427546580000 | date: 'fullDate' }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar>person_add</mat-icon>
+                    <h4 matLine>Added Joel to contact list</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ 1428275520000 | date: 'fullDate' }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar>phone_missed</mat-icon>
+                    <h4 matLine>Missed live call from Ellie</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ 1428830580000 | date: 'fullDate' }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-avatar>group_add</mat-icon>
+                    <h4 matLine>You've been added to HR group</h4>
+                    <span class="text-md mat-text-muted" matLine>{{ 1429363920000 | date: 'fullDate' }}</span>
+                </mat-list-item>
+                -->
+            </mat-nav-list>
+        </div>
+    </mat-tab>
+</mat-tab-group>

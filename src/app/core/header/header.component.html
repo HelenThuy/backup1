@@ -1,0 +1,60 @@
+<mat-toolbar class="main-header" color="primary">
+    <button (click)="toggleSidenav.emit()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="branding">
+<!--        <div class="logo"></div>-->
+        <div></div>
+    </div>
+    <div class="search-bar" fxFlex>
+<!--        <form class="search-form" [ngStyle.xs]="{display: 'none'}">-->
+<!--            <mat-icon>search</mat-icon>-->
+<!--            <input type="text" placeholder="Search" autofocus="true"/>-->
+<!--        </form>-->
+    </div>
+
+    <div class="role-header">
+        <div class="widget-heading">{{user_name}}</div>
+
+        <div  class="widget-subheading">
+            <span *ngIf="role_name">{{role_name}}</span>
+            <span *ngIf="branch_name"> - {{branch_name}}</span>
+        </div>
+    </div>
+    <button *ngIf="role_id === 1" mat-icon-button class="ml-xs"  [routerLink]="['/reception/check-schedule']">
+<!--        <mat-icon matBadge="15" matBadgeColor="warn">event</mat-icon>-->
+        <mat-icon>event</mat-icon>
+        <span *ngIf="noti && noti.total_calendar && noti.total_calendar > 0" class="notification-label">{{noti.total_calendar}}</span>
+    </button>
+<!--    <button *ngIf="role_id === 1" mat-icon-button class="ml-xs"  [routerLink]="['/reception/check-schedule']">-->
+<!--        <mat-icon class="role-header" matBadge="15" matBadgeColor="warn">notifications</mat-icon>-->
+<!--    </button>-->
+<!--    <button (click)="fullScreenToggle()" mat-icon-button>-->
+<!--        <mat-icon>fullscreen</mat-icon>-->
+<!--    </button>-->
+<!--    <button (click)="toggleNotificationSidenav.emit()" mat-icon-button class="ml-xs overflow-visible">-->
+<!--        <mat-icon>notifications</mat-icon>-->
+<!--        <span *ngIf="noti && noti.total_notification && noti.total_notification > 0" class="notification-label">{{noti.total_notification}}</span>-->
+<!--    </button>-->
+    <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs">
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #user="matMenu" x-position="before">
+<!--        <button mat-menu-item>-->
+<!--            <mat-icon>settings</mat-icon>-->
+<!--            Settings-->
+<!--        </button>-->
+<!--        <button mat-menu-item [routerLink]="['/', 'profile', 'info']">-->
+<!--            <mat-icon>account_box</mat-icon>-->
+<!--            Thông tin cá nhân-->
+<!--        </button>-->
+        <button mat-menu-item [routerLink]="['/', 'profile', 'change-password']">
+            <mat-icon>lock</mat-icon>
+            Đổi mật khẩu
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            Thoát
+        </button>
+    </mat-menu>
+</mat-toolbar>

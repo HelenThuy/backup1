@@ -1,0 +1,116 @@
+<div class="w-980">
+    <mat-card *ngIf="stateFormVerification" >
+        <mat-card-header>
+            <mat-card-title>Mã xác nhận đã được gửi về điện thoại của bạn <b *ngIf="smsNum">{{smsNum}}</b> </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="formVerify" (ngSubmit)="addProfile()">
+
+                <div fxLayout="column" fxLayoutAlign="space-around">
+                    <div class="pb-1">
+                        <mat-form-field style="width: 100%">
+                            <input matInput type="text" placeholder="Verification Code"
+                                   [formControl]="formVerify.controls['verificationCode']">
+                        </mat-form-field>
+                        <small *ngIf="formVerify.controls['verificationCode'].hasError('required') && formVerify.controls['verificationCode'].touched"
+                               class="mat-text-warn">Vui lòng nhập vào Verification Code.
+                        </small>
+                    </div>
+
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!formVerify.valid">
+                        Verify
+                    </button>
+
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="!stateFormVerification" >
+        <mat-card-header>
+            <mat-card-title>Thêm mới hồ sơ</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+            <form [formGroup]="addProfileFom" novalidate (ngSubmit)="sendLoginCode()"  >
+                <div fxFlex fxFlexAlign="start">
+                    <div fxLayout="row wrap" fxLayout.xs="column wrap" >
+                        <mat-form-field fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 50px)">
+                            <mat-select class="readonly-block" [disabled]="true" placeholder="Chọn bệnh viện" [compareWith]="compareObjects" formControlName="hospital"
+                                        [(ngModel)]="currentCompany" (selectionChange)="changeHospital($event)">
+                                <mat-option *ngFor="let hospital of companies"
+                                            [value]="hospital">{{hospital.company_name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 25px)">
+                            <input matInput placeholder="Họ và tên bệnh nhân" formControlName="patient">
+                        </mat-form-field>
+
+                        <div class="custom-radio-group1" fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 50px)">
+                            <label>Giới tính</label>
+                            <mat-radio-group formControlName="gender" >
+                                <mat-radio-button [value]="1">Nam</mat-radio-button>
+                                <mat-radio-button [value]="2">Nữ</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <mat-form-field fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                            <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Ngày sinh"
+                                   formControlName="birthday" >
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!addProfileFom.get('birthday').valid && addProfileFom.get('birthday').touched">Vui lòng nhập ngày sinh !</span>
+                        </mat-error>
+
+    <!--                    <div fxFlex.xs="calc(33%-25px)" fxFlex="calc(33% - 25px)">-->
+    <!--                        <label>Giới tính</label>-->
+    <!--                        <mat-radio-group formControlName="gender" required>-->
+    <!--                            <mat-radio-button [value]="1">Nam</mat-radio-button>-->
+    <!--                            <mat-radio-button [value]="2">Nữ</mat-radio-button>-->
+    <!--                        </mat-radio-group>-->
+    <!--                        <mat-error>-->
+    <!--                            <span *ngIf="!addProfileFom.get('gender').valid && addProfileFom.get('gender').touched">Vui lòng nhập giới !</span>-->
+    <!--                        </mat-error>-->
+    <!--                    </div>-->
+
+                        <mat-form-field fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                            <input matInput placeholder="Số điện thoại (0123456789)" type="text" formControlName="phoneNumber"
+                                   required>
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!addProfileFom.get('phoneNumber').valid && addProfileFom.get('phoneNumber').touched">Vui lòng nhập đúng số điện thoại !</span>
+                        </mat-error>
+
+                        <mat-form-field fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                            <input matInput placeholder="Địa chỉ" type="text" formControlName="address">
+                        </mat-form-field>
+                        <mat-form-field fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                            <input matInput placeholder="Mã y tế" type="number" formControlName="patientID">
+                        </mat-form-field>
+                        <mat-form-field fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                            <textarea matInput placeholder="Tiểu sử bệnh" formControlName="medicalHistory"></textarea>
+                        </mat-form-field>
+                        <mat-form-field fxFlex.xs="calc(50%-25px)" fxFlex="calc(50% - 25px)">
+                            <textarea matInput placeholder="Dị ứng" formControlName="allergy"></textarea>
+                        </mat-form-field>
+
+                        <div>
+                            <div id="recaptcha-container" (resolved)="resolved($event)"></div>
+                            <mat-error>
+                                <span *ngIf="captchaError">{{captchaError}}</span>
+                            </mat-error>
+                        </div>
+
+                        <mat-card-actions>
+                            <button mat-raised-button color="primary" class="btn-block" type="submit">Lưu</button>
+                        </mat-card-actions>
+                    </div>
+                </div>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>

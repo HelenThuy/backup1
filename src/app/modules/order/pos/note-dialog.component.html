@@ -1,0 +1,26 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Ghi chú sản phẩm</h1>
+<mat-error *ngIf="error">
+    <span>{{error}}</span>
+</mat-error>
+<div mat-dialog-content style="margin-top: 10px;">
+    <mat-form-field style="width: 100%;">
+        <mat-label>Số lượng</mat-label>
+        <input matInput type="number" [(ngModel)]="data.quantity">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Giá giảm/sp</mat-label>
+        <input matInput [(ngModel)]="data.discount_field">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Giá tiền</mat-label>
+        <input matInput readonly type="number" [value]="data.price">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Ghi chú</mat-label>
+        <textarea matInput [(ngModel)]="data.note"
+                  maxLength="128"></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="green" (click)="submit()" >Cập nhật</button>
+</div>

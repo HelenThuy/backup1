@@ -1,0 +1,59 @@
+<div class="session mat-bg-primary">
+    <div class="session-content">
+        <div class="session-wrapper">
+<!--            <div class="text-xs-center pb-1 logo"></div>-->
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="text-xs-center pb-1">
+                            <p class="mat-text-muted">Đăng nhập vào hệ thống.</p>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="space-around">
+                            <div class="pb-1">
+                                <!--
+                                <mat-form-field style="width: 25%">
+                                    <mat-select [formControl]="codeCtrl" placeholder="Country" #singleSelect>
+                                        <mat-option *ngFor="let code of codes" [value]="code.dial_code">
+                                            {{ code.dial_code }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                -->
+                                <mat-form-field style="width: 100%">
+                                    <input matInput placeholder="Tên đăng nhập" type="text"
+                                           [formControl]="form.controls['phoneNumber']">
+                                </mat-form-field>
+                                <small *ngIf="form.controls['phoneNumber'].hasError('required') && form.controls['phoneNumber'].touched"
+                                       class="mat-text-warn">Bạn phải nhập vào số thuê bao.
+                                </small>
+                            </div>
+                            <div class="pb-1">
+                                <mat-form-field style="width: 100%">
+                                    <input matInput type="password" placeholder="Mật khẩu"
+                                           [formControl]="form.controls['password']">
+                                </mat-form-field>
+                                <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched"
+                                       class="mat-text-warn">Vui lòng nhập vào mật khẩu.</small>
+                            </div>
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Đăng nhập
+                            </button>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="pt-1 pb-1 text-xs-center a-style-1">
+                            <a href="../../../files/ios/index.html">
+                                Tải ứng dụng đặt đồ ăn
+                            </a>
+                        </div>
+                        <!--
+                        <div class="pt-1 pb-1 text-xs-center">
+                            <a [routerLink]="['/session/forgot']">Quên mật khẩu?</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a [routerLink]="['/session/signup']">Đăng ký tài khoản mới.</a>
+                        </div>
+                        -->
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

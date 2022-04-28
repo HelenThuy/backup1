@@ -1,0 +1,28 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Cập nhật khách hàng, hoa hồng</h1>
+<!--<span style="color: red">** Thêm dấu '<b>%</b>' nếu muốn tính theo % hóa đơn</span>-->
+<div mat-dialog-content style="margin-top: 10px;">
+    <mat-form-field style="width: 100%;">
+        <mat-label>Người nhận</mat-label>
+        <input matInput [(ngModel)]="receiver_name">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Khách hàng</mat-label>
+        <mat-select placeholder="Danh mục" [compareWith]="compareObjects" [(ngModel)]="customer_name" >
+            <ngx-mat-select-search placeholderLabel="Tìm danh mục" (input)="searchCustomer($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+            <mat-option *ngFor="let customer of customerData"
+                        [value]="customer">{{customer.partner_customer_name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Chi % (đơn vị %)</mat-label>
+        <input matInput type="number" [(ngModel)]="roses_percent">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Ghi chú chi % cho ai</mat-label>
+        <input matInput [(ngModel)]="roses_note">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="green" (click)="save()">Cập nhật</button>
+    <button mat-button color="gray" (click)="clear()">Reset</button>
+</div>

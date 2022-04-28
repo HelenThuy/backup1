@@ -1,0 +1,51 @@
+<h1 mat-dialog-title style="margin-bottom: 0px;">Thiết lập thông tin sản phẩm</h1>
+
+<div mat-dialog-actions style="margin-top: 10px;display: block">
+    <mat-form-field *ngIf="isNew">
+        <mat-select placeholder="Danh mục loại món ăn" [(ngModel)]="curCate" (selectionChange)="selectCate($event)">
+            <ngx-mat-select-search placeholderLabel="Tìm danh mục loại món ăn" (input)="searchCate($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+            <mat-option *ngFor="let category of tmpCate"
+                        [value]="category">{{category.category_name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="isNew">
+        <mat-select placeholder="Món ăn" [(ngModel)]="curProd">
+            <ngx-mat-select-search placeholderLabel="Tìm món ăn" (input)="searchProduct($event.target.value)" noEntriesFoundLabel="'Không có kết quả phù hợp'"></ngx-mat-select-search>
+            <mat-option *ngFor="let product of tmpProd"
+                        [value]="product">{{product.product_name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!isNew">
+        <input  matInput type="text" value="{{curProdName}}" readonly/>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!isNew">
+        <input matInput type="text" value="{{curProdCode}}" readonly/>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!isNew">
+        <input  matInput type="number" [(ngModel)]="curProdPrice" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Set đồ ăn" [(ngModel)]="curSet"  [compareWith]="compareSet">
+            <mat-option *ngFor="let set of categoriesParentDaily"
+                        [value]="set">{{set.category_daily_parent_name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Loại món ăn" [(ngModel)]="curOption" [compareWith]="compareOption">
+            <mat-option *ngFor="let option of categoriesDaily"
+                        [value]="option">{{option.category_daily_name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <section>
+        <mat-checkbox [(ngModel)]="featured">Món đặc biệt!</mat-checkbox>
+    </section>
+    <br />
+    <div class="align-right">
+        <button *ngIf="isNew" mat-button color="green" (click)="save()" >Cập nhật</button>
+        <button *ngIf="!isNew" mat-button color="green" (click)="update()" >Cập nhật</button>
+    </div>
+</div>
